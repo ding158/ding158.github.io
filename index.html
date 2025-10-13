@@ -1,235 +1,382 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tong Ding | Home</title>
-  <meta name="description" content="Professional page for Tong Ding – PhD candidate in Numerical Linear Algebra and Machine Learning." />
-  <meta name="author" content="Tong Ding" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>TD</text></svg>">
-  <!-- Open Graph -->
-  <meta property="og:title" content="Tong Ding | Professional Page" />
-  <meta property="og:description" content="Research, teaching, and personal page." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ding158.github.io/" />
-  
-  <style>
-    :root {
-      --accent: #2b5f9e; /* deep blue */
-      --accent-2: #0f172a; /* near-black */
-      --text: #1f2937; /* slate-800 */
-      --muted: #6b7280; /* gray-500 */
-      --bg: #ffffff;
-      --bg-alt: #f8fafc;
-      --radius: 14px;
-      --shadow: 0 6px 20px rgba(0,0,0,.06);
-      --maxw: 980px;
-    }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      color: var(--text);
-      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: var(--bg);
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Academic Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Header / Nav */
-    .site-header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.9); backdrop-filter: saturate(150%) blur(8px); border-bottom: 1px solid #e5e7eb; }
-    .nav { max-width: var(--maxw); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; }
-    .brand { font-weight: 700; letter-spacing: .2px; color: var(--accent-2); }
-    .menu { display: flex; gap: 22px; }
-    .menu a { font-weight: 600; color: var(--accent-2); opacity: .85; }
-    .menu a[aria-current="page"] { color: var(--accent); }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
 
-    .container { max-width: var(--maxw); margin: 0 auto; padding: 24px 20px; }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e5e5;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
 
-    /* Hero */
-    .hero { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; padding: 28px 0 8px; }
-    .hero-card { display: grid; grid-template-columns: 140px 1fr; gap: 24px; background: var(--bg-alt); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px; }
-    .avatar { width: 140px; height: 140px; border-radius: 12px; object-fit: cover; background: #e5e7eb; }
-    .hero h1 { margin: 0; font-size: 28px; line-height: 1.2; color: var(--accent-2); }
-    .tagline { margin: 6px 0 10px; color: var(--muted); }
-    .quicklinks { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
-    .chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid #e5e7eb; padding: 8px 10px; border-radius: 999px; background: #fff; font-weight: 600; }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-    /* Sections */
-    section { scroll-margin-top: 84px; padding: 18px 0 4px; }
-    .section-card { background: #fff; border: 1px solid #e5e7eb; border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; }
-    h2 { margin: 0 0 8px; font-size: 22px; }
-    h3 { margin: 14px 0 8px; font-size: 18px; }
-    .list { list-style: none; padding: 0; margin: 6px 0 0; }
-    .list li { padding: 10px 0; border-bottom: 1px dashed #e5e7eb; }
-    .list li:last-child { border-bottom: 0; }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
 
-    .grid-two { display: grid; grid-template-columns: 1fr; gap: 16px; }
+        nav a:hover, nav a.active {
+            color: #0066cc;
+        }
 
-    /* Footer */
-    footer { border-top: 1px solid #e5e7eb; color: #6b7280; }
-    .foot { max-width: var(--maxw); margin: 0 auto; padding: 14px 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 2rem 4rem;
+        }
 
-    /* Responsive */
-    @media (min-width: 760px) {
-      .hero { padding-top: 40px; }
-      .hero-card { grid-template-columns: 180px 1fr; padding: 22px; }
-      .avatar { width: 180px; height: 180px; border-radius: 16px; }
-      .grid-two { grid-template-columns: 1.2fr .8fr; gap: 20px; }
-    }
+        section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
 
-    /* Print */
-    @media print {
-      .site-header, .quicklinks, footer { display: none; }
-      .section-card { box-shadow: none; }
-    }
-  </style>
+        section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .home-header {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #f0f0f0;
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .profile-info .title {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-links a {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        .bio {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1.5rem;
+            font-weight: 600;
+            color: #222;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.8rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .research-item, .teaching-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .research-item:last-child, .teaching-item:last-child {
+            border-bottom: none;
+        }
+
+        .research-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-meta {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 0.8rem;
+        }
+
+        .research-description {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .interests-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+
+        .interest-tag {
+            background: #f5f5f5;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .home-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <a href="#home" class="sr-only">Skip to content</a>
-  <header class="site-header" role="banner">
-    <nav class="nav" aria-label="Main">
-      <div class="brand">Tong&nbsp;Ding</div>
-      <div class="menu">
-        <a href="#home" aria-current="page">Home</a>
-        <a href="#research">Research</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#personal">Personal</a>
-      </div>
+    <nav>
+        <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#research" class="nav-link">Research</a></li>
+            <li><a href="#teaching" class="nav-link">Teaching</a></li>
+            <li><a href="#personal" class="nav-link">Personal</a></li>
+        </ul>
     </nav>
-  </header>
 
-  <main id="home" class="container" role="main">
-    <!-- HOME -->
-    <section>
-      <div class="hero">
-        <div class="hero-card">
-          <!-- Replace src with your actual photo path (e.g., images/profile.jpg) -->
-          <img class="avatar" src="images/profile.jpg" alt="Portrait of Tong Ding" />
-          <div>
-            <h1>PhD Candidate, Numerical Linear Algebra & Machine Learning</h1>
-            <p class="tagline">Center for Computational & Applied Mathematics, Purdue University</p>
-
-            <div class="grid-two">
-              <div>
-                <p>
-                  I work at the intersection of <strong>structured matrices</strong> (HSS/HBS, low‑rank formats) and
-                  <strong>optimization for neural networks</strong> (mass matrices, Gauss–Newton/Hessian structure), with an
-                  emphasis on turning theoretical structure into <strong>fast, reliable solvers</strong>.
-                </p>
-                <p>
-                  I am on the postdoc job market this year. My interests span numerical linear algebra, scientific machine
-                  learning, and fast direct/iterative methods.
-                </p>
-              </div>
-              <div>
-                <div class="quicklinks">
-                  <!-- Replace placeholders with your real links -->
-                  <a class="chip" href="cv/TongDing_CV.pdf">CV (PDF)</a>
-                  <a class="chip" href="mailto:your-email@purdue.edu">your-email@purdue.edu</a>
-                  <a class="chip" href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar</a>
-                  <a class="chip" href="https://github.com/ding158" target="_blank" rel="noopener">GitHub</a>
-                  <a class="chip" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+    <div class="container">
+        <!-- HOME SECTION -->
+        <section id="home" class="active">
+            <div class="home-header">
+                <img src="your-photo.jpg" alt="Your Name" class="profile-photo">
+                <div class="profile-info">
+                    <h1>Your Name</h1>
+                    <div class="title">PhD Candidate in [Your Field]</div>
+                    <div class="title">[Your University]</div>
+                    <div class="contact-links">
+                        <a href="mailto:your.email@university.edu">Email</a>
+                        <span>|</span>
+                        <a href="https://github.com/ding158" target="_blank">GitHub</a>
+                        <span>|</span>
+                        <a href="your-cv.pdf" target="_blank">CV</a>
+                    </div>
                 </div>
-              </div>
             </div>
 
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="bio">
+                <p>I am a final-year PhD candidate at [University], working with [Advisor Name]. My research focuses on [brief description of your research area]. I am currently on the job market seeking postdoctoral positions.</p>
+                
+                <p>Prior to my PhD, I received my [degree] from [institution] in [year].</p>
+            </div>
 
-    <!-- RESEARCH -->
-    <section id="research">
-      <div class="section-card">
-        <h2>Research</h2>
-        <p>
-          My research focuses on hierarchical low‑rank representations and their role in accelerating training for two‑layer
-          ReLU networks. I study the structure of mass and Gauss–Newton matrices and develop linear‑time factorization/solve
-          routines under realistic accuracy targets.
-        </p>
+            <h3>Research Interests</h3>
+            <div class="interests-list">
+                <span class="interest-tag">Interest Area 1</span>
+                <span class="interest-tag">Interest Area 2</span>
+                <span class="interest-tag">Interest Area 3</span>
+                <span class="interest-tag">Interest Area 4</span>
+            </div>
 
-        <h3>Preprints & Selected Papers</h3>
-        <ul class="list">
-          <li>
-            <strong>Structure‑Guided Gauss–Newton for Shallow ReLU Networks.</strong> <em>Preprint</em>, 2025.
-            <span> [<a href="#">pdf</a>] [<a href="#">code</a>] [<a href="#">bib</a>] </span>
-          </li>
-          <li>
-            <strong>Low‑rank Off‑Diagonal Structure in Mass and Hessian Blocks for ReLU Models.</strong>
-            <em>In preparation</em>, 2025.
-          </li>
-        </ul>
+            <h3>News</h3>
+            <div class="research-item">
+              <div class="research-meta">October 2025</div>
+              <div class="research-description">Attended the SIAM Central States Section Annual Meeting.</div>
+            </div>
+          
+            <div class="research-item">
+              <div class="research-meta">December 2025</div>
+              <div class="research-description">Will attend the CBMS Workshop at the University of Houston.</div>
+            </div>
+          
+            <div class="research-item">
+              <div class="research-meta">February 2026</div>
+              <div class="research-description">Will attend the ICERM Workshop on Randomized Numerical Linear Algebra (RNLA).</div>
+            </div>
+          
+        </section>
 
-        <h3>Talks</h3>
-        <ul class="list">
-          <li>SIAM CSE, Session on Fast Solvers for ML‑adjacent Linear Systems, 2025. [<a href="#">slides</a>]</li>
-        </ul>
+        <!-- RESEARCH SECTION -->
+        <section id="research">
+            <h2>Research</h2>
+            <p class="bio">My research focuses on [overview of research]. I am particularly interested in [specific areas].</p>
 
-        <h3>Open‑source</h3>
-        <ul class="list">
-          <li><strong>hss-gn</strong> – prototyping HSS factorization + iterative refinement for GN blocks. [<a href="#">repo</a>]</li>
-        </ul>
-      </div>
-    </section>
+            <h3>Publications</h3>
+            
+            <div class="research-item">
+                <div class="research-title">Paper Title Goes Here</div>
+                <div class="research-meta">Author 1, <strong>Your Name</strong>, Author 3<br>
+                Conference/Journal Name, Year</div>
+                <div class="research-description">
+                    Brief description of the paper and its contributions.
+                    <br><a href="#" style="color: #0066cc; text-decoration: none;">PDF</a> | 
+                    <a href="#" style="color: #0066cc; text-decoration: none;">arXiv</a> | 
+                    <a href="#" style="color: #0066cc; text-decoration: none;">Code</a>
+                </div>
+            </div>
 
-    <!-- TEACHING -->
-    <section id="teaching">
-      <div class="section-card">
-        <h2>Teaching</h2>
-        <p>Teaching and mentoring experience.</p>
-        <h3>Instructor / Co‑Instructor</h3>
-        <ul class="list">
-          <li>Numerical Linear Algebra (graduate) – guest lectures on hierarchical matrices and preconditioning.</li>
-        </ul>
-        <h3>Teaching Assistant</h3>
-        <ul class="list">
-          <li>Linear Algebra, Calculus II, Differential Equations – discussion sections and office hours.</li>
-        </ul>
-        <h3>Mentoring</h3>
-        <ul class="list">
-          <li>Undergraduate research mentorship on low‑rank compression for NN training matrices.</li>
-        </ul>
-      </div>
-    </section>
+            <div class="research-item">
+                <div class="research-title">Another Paper Title</div>
+                <div class="research-meta"><strong>Your Name</strong>, Co-author<br>
+                Conference/Journal Name, Year</div>
+                <div class="research-description">
+                    Brief description of this research work.
+                    <br><a href="#" style="color: #0066cc; text-decoration: none;">PDF</a> | 
+                    <a href="#" style="color: #0066cc; text-decoration: none;">Code</a>
+                </div>
+            </div>
 
-    <!-- PERSONAL -->
-    <section id="personal">
-      <div class="section-card">
-        <h2>Personal</h2>
-        <p>
-          Outside research, I enjoy rock climbing and snowboarding. I also volunteer with the SIAM student chapter and help
-          organize seminars and student events.
-        </p>
-      </div>
-    </section>
-  </main>
+            <h3>Working Papers</h3>
+            
+            <div class="research-item">
+                <div class="research-title">Work in Progress Title</div>
+                <div class="research-meta"><strong>Your Name</strong>, Collaborators<br>
+                Status: Under Review</div>
+                <div class="research-description">
+                    Description of ongoing work.
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    <div class="foot">
-      <div>© <span id="y"></span> Tong Ding</div>
-      <div>Last updated <span id="d"></span></div>
+        <!-- TEACHING SECTION -->
+        <section id="teaching">
+            <h2>Teaching</h2>
+            <p class="bio">I am passionate about teaching and have experience instructing courses in [areas]. I believe in [your teaching philosophy].</p>
+
+            <h3>Teaching Experience</h3>
+            
+            <div class="teaching-item">
+                <div class="research-title">Course Name</div>
+                <div class="research-meta">Role: Teaching Assistant/Instructor | Semester, Year<br>
+                Institution Name</div>
+                <div class="research-description">
+                    Description of your role and responsibilities. Topics covered included [list topics].
+                </div>
+            </div>
+
+            <div class="teaching-item">
+                <div class="research-title">Another Course</div>
+                <div class="research-meta">Role: Teaching Assistant | Semester, Year<br>
+                Institution Name</div>
+                <div class="research-description">
+                    Brief description of the course and your contributions.
+                </div>
+            </div>
+
+            <h3>Mentoring</h3>
+            <div class="research-description">
+                Experience mentoring undergraduate or graduate students, supervising research projects, etc.
+            </div>
+        </section>
+
+        <!-- PERSONAL SECTION -->
+        <section id="personal">
+            <h2>Personal</h2>
+            <div class="bio">
+                <p>Outside of research, I enjoy [hobbies/interests]. I'm originally from [location] and currently based in [current location].</p>
+                
+                <p>[Add more personal information, hobbies, interesting facts about yourself, travel experiences, or anything else you'd like to share].</p>
+            </div>
+
+            <h3>Miscellaneous</h3>
+            <div class="research-description">
+                <p>Links to blogs, photography, or other personal projects can go here.</p>
+            </div>
+        </section>
     </div>
-  </footer>
 
-  <script>
-    // Small conveniences; safe with GitHub Pages
-    (function() {
-      const y = document.getElementById('y');
-      const d = document.getElementById('d');
-      const now = new Date();
-      if (y) y.textContent = now.getFullYear();
-      if (d) d.textContent = now.toLocaleDateString(undefined, { year: 'numeric', month: 'short' });
+    <footer>
+        © 2025 Your Name. Last updated: October 2025
+    </footer>
 
-      // Update aria-current on nav based on hash
-      function setActive() {
-        const hash = window.location.hash || '#home';
-        document.querySelectorAll('.menu a').forEach(a => {
-          a.setAttribute('aria-current', a.getAttribute('href') === hash ? 'page' : 'false');
+    <script>
+        // Navigation handling
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show corresponding section
+                const targetId = this.getAttribute('href').substring(1);
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(targetId).classList.add('active');
+            });
         });
-      }
-      window.addEventListener('hashchange', setActive);
-      setActive();
-    })();
-  </script>
+    </script>
 </body>
 </html>
