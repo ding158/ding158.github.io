@@ -12,50 +12,141 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Georgia', serif;
             line-height: 1.6;
             color: #333;
             background: #fff;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e5e5e5;
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        nav ul {
-            list-style: none;
             display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            min-height: 100vh;
         }
 
-        nav a {
+        /* Sidebar */
+        .sidebar {
+            width: 270px;
+            background: #002855;
+            color: white;
+            position: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 1rem;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .sidebar nav {
+            width: 100%;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            width: 100%;
+        }
+
+        .sidebar nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar nav a {
+            display: block;
             text-decoration: none;
-            color: #333;
+            color: rgba(255, 255, 255, 0.7);
             font-weight: 500;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
+            padding: 0.8rem 1.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
         }
 
-        nav a:hover, nav a.active {
+        .sidebar nav a:hover,
+        .sidebar nav a.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 270px;
+            flex: 1;
+            padding: 3rem 4rem;
+            max-width: 1200px;
+        }
+
+        .header-section {
+            margin-bottom: 3rem;
+        }
+
+        .header-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .title-info {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0.3rem;
+        }
+
+        .title-info a {
             color: #0066cc;
+            text-decoration: none;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 100px 2rem 4rem;
+        .title-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-box {
+            float: right;
+            text-align: right;
+            margin-top: -80px;
+        }
+
+        .contact-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: flex-end;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         section {
@@ -72,99 +163,76 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .home-header {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
-        }
-
-        .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #f0f0f0;
-        }
-
-        .profile-info h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .profile-info .title {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .contact-links a {
-            color: #0066cc;
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-
-        .contact-links a:hover {
-            text-decoration: underline;
-        }
-
         .bio {
             font-size: 1.05rem;
             line-height: 1.8;
-            color: #555;
-            margin-bottom: 2rem;
+            color: #333;
+            margin: 2rem 0;
+            clear: both;
         }
 
         h2 {
             font-size: 1.8rem;
             margin: 2.5rem 0 1.5rem;
             font-weight: 600;
-            color: #222;
+            color: #000;
         }
 
         h3 {
             font-size: 1.3rem;
-            margin: 1.5rem 0 0.8rem;
+            margin: 2rem 0 1rem;
             font-weight: 600;
             color: #333;
         }
 
-        .research-item, .teaching-item {
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #f0f0f0;
+        /* News Table */
+        .news-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
         }
 
-        .research-item:last-child, .teaching-item:last-child {
-            border-bottom: none;
+        .news-table th {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 2px solid #ddd;
+            font-weight: 600;
+            background: #f9f9f9;
         }
 
-        .news-item {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 1rem;
-            padding: 0.5rem 0;
+        .news-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
         }
 
-        .news-date {
-            min-width: 120px;
+        .news-table tr:hover {
+            background: #fafafa;
+        }
+
+        .date-cell {
+            width: 140px;
             font-weight: 500;
             color: #666;
-            font-size: 0.95rem;
         }
 
-        .news-description {
-            flex: 1;
-            color: #333;
-            line-height: 1.6;
+        .date-cell.highlight {
+            color: #cc0000;
+            font-weight: 600;
+        }
+
+        .update-cell a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .update-cell a:hover {
+            text-decoration: underline;
+        }
+
+        .research-item, .teaching-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
         }
 
         .research-title {
@@ -175,9 +243,10 @@
         }
 
         .research-meta {
-            font-size: 0.9rem;
-            color: #888;
+            font-size: 0.95rem;
+            color: #666;
             margin-bottom: 0.8rem;
+            line-height: 1.6;
         }
 
         .research-description {
@@ -193,112 +262,169 @@
         }
 
         .interest-tag {
-            background: #f5f5f5;
+            background: #f0f0f0;
             padding: 0.5rem 1rem;
-            border-radius: 20px;
+            border-radius: 4px;
             font-size: 0.9rem;
             color: #555;
         }
 
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #888;
-            font-size: 0.9rem;
-            margin-top: 4rem;
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 220px;
+            }
+
+            .main-content {
+                margin-left: 220px;
+                padding: 2rem;
+            }
+
+            .contact-box {
+                float: none;
+                margin-top: 2rem;
+                text-align: left;
+            }
+
+            .social-links {
+                justify-content: flex-start;
+            }
         }
 
         @media (max-width: 768px) {
-            .home-header {
+            body {
                 flex-direction: column;
-                text-align: center;
             }
 
-            .profile-info h1 {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 2rem 1rem;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 2rem 1.5rem;
+            }
+
+            .header-section h1 {
                 font-size: 2rem;
             }
 
-            nav ul {
-                gap: 1.5rem;
+            .news-table {
                 font-size: 0.9rem;
+            }
+
+            .date-cell {
+                width: 100px;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#home" class="nav-link active">Home</a></li>
-            <li><a href="#research" class="nav-link">Research</a></li>
-            <li><a href="#teaching" class="nav-link">Teaching</a></li>
-            <li><a href="#personal" class="nav-link">Personal</a></li>
-        </ul>
-    </nav>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="your-photo.jpg" alt="Your Name" class="profile-photo">
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#teaching" class="nav-link">Teaching</a></li>
+                <li><a href="#personal" class="nav-link">Personal</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <div class="container">
+    <!-- Main Content -->
+    <div class="main-content">
         <!-- HOME SECTION -->
         <section id="home" class="active">
-            <div class="home-header">
-                <img src="your-photo.jpg" alt="Your Name" class="profile-photo">
-                <div class="profile-info">
-                    <h1>Your Name</h1>
-                    <div class="title">PhD Candidate in [Your Field]</div>
-                    <div class="title">[Your University]</div>
-                    <div class="contact-links">
-                        <a href="mailto:your.email@university.edu">Email</a>
-                        <span>|</span>
-                        <a href="https://github.com/ding158" target="_blank">GitHub</a>
-                        <span>|</span>
-                        <a href="your-cv.pdf" target="_blank">CV</a>
+            <div class="header-section">
+                <h1>Tong Ding</h1>
+                <div class="title-info">
+                    <strong>PhD Candidate in Mathematics</strong>
+                </div>
+                <div class="title-info">
+                    <a href="#">Department of Mathematics</a>
+                </div>
+                <div class="title-info">
+                    <a href="#">Purdue University</a>
+                </div>
+
+                <div class="contact-box">
+                    <h3>Contact</h3>
+                    <div class="contact-info">
+                        Office: MATH 707
+                    </div>
+                    <div class="contact-info">
+                        <a href="mailto:ding158@purdue.edu">ding158@purdue.edu</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/ding158" target="_blank" title="GitHub">G</a>
+                        <a href="#" target="_blank" title="Google Scholar">S</a>
+                        <a href="#" target="_blank" title="ORCID">O</a>
                     </div>
                 </div>
             </div>
 
             <div class="bio">
-                <p>I am a final-year PhD candidate at [University], working with [Advisor Name]. My research focuses on [brief description of your research area]. I am currently on the job market seeking postdoctoral positions.</p>
+                <p>I am a final-year PhD candidate at Purdue Univeristy, working with Prof. Jianlin Xia. My research focuses on the insection of numerical linear algebra and machine learning. I am currently on the job market seeking postdoctoral positions.</p>
                 
-                <p>Prior to my PhD, I received my [degree] from [institution] in [year].</p>
+                <p>Prior to my PhD, I received my bachlor degree from Purdue Univeristy in 2019.</p>
             </div>
 
             <h3>Research Interests</h3>
             <div class="interests-list">
-                <span class="interest-tag">Interest Area 1</span>
-                <span class="interest-tag">Interest Area 2</span>
-                <span class="interest-tag">Interest Area 3</span>
-                <span class="interest-tag">Interest Area 4</span>
+                <span class="interest-tag">Numerical Linear Algebra</span>
+                <span class="interest-tag">Randomized Algorithms</span>
+                <span class="interest-tag">Machine Learning</span>
+                <span class="interest-tag">Scientific Computing</span>
             </div>
 
-            <h3>News</h3>
-            <div class="news-item">
-                <div class="news-date">October 2025</div>
-                <div class="news-description">Attended the SIAM Central States Section Annual Meeting.</div>
-            </div>
-            <div class="news-item">
-                <div class="news-date">December 2025</div>
-                <div class="news-description">Will attend the CBMS Workshop at the University of Houston.</div>
-            </div>
-            <div class="news-item">
-                <div class="news-date">February 2026</div>
-                <div class="news-description">Will attend the ICERM Workshop on Randomized Numerical Linear Algebra (RNLA).</div>
-            </div>
+            <table class="news-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Updates</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-cell highlight">Job seeking</td>
+                        <td class="update-cell">I am actively seeking postdoc positions beginning Fall 2026.</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">October 2025</td>
+                        <td class="update-cell">Attended the SIAM Central States Section Annual Meeting.</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">December 2025</td>
+                        <td class="update-cell">Will attend the CBMS Workshop at the University of Houston.</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">February 2026</td>
+                        <td class="update-cell">Will attend the ICERM Workshop on Randomized Numerical Linear Algebra (RNLA).</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <!-- RESEARCH SECTION -->
         <section id="research">
             <h2>Research</h2>
-            <p class="bio">My research focuses on [overview of research]. I am particularly interested in [specific areas].</p>
+            <p class="bio">My research focuses on the insection of numerical linear algebra and machine learning. I am particularly interested in strucutered solvers in NN.</p>
 
             <h3>Publications</h3>
             
             <div class="research-item">
                 <div class="research-title">Paper Title Goes Here</div>
-                <div class="research-meta">Author 1, <strong>Your Name</strong>, Author 3<br>
+                <div class="research-meta">Zhiqiang Cai, <strong>Tong Ding</strong>, Author 3<br>
                 Conference/Journal Name, Year</div>
                 <div class="research-description">
                     Brief description of the paper and its contributions.
-                    <br><a href="#" style="color: #0066cc; text-decoration: none;">PDF</a> | 
-                    <a href="#" style="color: #0066cc; text-decoration: none;">arXiv</a> | 
-                    <a href="#" style="color: #0066cc; text-decoration: none;">Code</a>
+                    <br><a href="#">PDF</a> | 
+                    <a href="#">arXiv</a> | 
+                    <a href="#">Code</a>
                 </div>
             </div>
 
@@ -308,8 +434,8 @@
                 Conference/Journal Name, Year</div>
                 <div class="research-description">
                     Brief description of this research work.
-                    <br><a href="#" style="color: #0066cc; text-decoration: none;">PDF</a> | 
-                    <a href="#" style="color: #0066cc; text-decoration: none;">Code</a>
+                    <br><a href="#">PDF</a> | 
+                    <a href="#">Code</a>
                 </div>
             </div>
 
@@ -371,10 +497,6 @@
             </div>
         </section>
     </div>
-
-    <footer>
-        © 2025 Your Name. Last updated: October 2025
-    </footer>
 
     <script>
         // Navigation handling
