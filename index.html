@@ -140,19 +140,14 @@
         }
 
         section {
-            display: none;
-            animation: fadeIn 0.5s;
+            scroll-margin-top: 2rem;
+            padding-top: 1rem;
+            min-height: 50vh;
         }
 
-        section.active {
-            display: block;
+        html {
+            scroll-behavior: smooth;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .bio {
             font-size: 1.05rem;
             line-height: 1.8;
@@ -699,23 +694,52 @@
     </div>
 
     <script>
-        // Navigation handling
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Update active nav link
-                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Show corresponding section
-                const targetId = this.getAttribute('href').substring(1);
-                document.querySelectorAll('section').forEach(section => {
-                    section.classList.remove('active');
-                });
-                document.getElementById(targetId).classList.add('active');
-            });
+    // Navigation handling
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Smooth scroll to section
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
-    </script>
+    });
+
+    // Scroll spy - update active nav based on scroll position
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    function updateActiveNav() {
+        let currentSection = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            const scrollPosition = window.scrollY + 150; // Offset for better UX
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + currentSection) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // Update on scroll
+    window.addEventListener('scroll', updateActiveNav);
+    
+    // Initial update
+    updateActiveNav();
+</script>
 </body>
 </html>
