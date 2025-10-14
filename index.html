@@ -323,6 +323,55 @@
             color: #2563eb;
             font-weight: bold;
         }
+        .activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.activity-card {
+    background: #f9fafb;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.activity-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.activity-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.activity-content {
+    padding: 1.5rem;
+}
+
+.activity-card .activity-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a2332;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.activity-description {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+        
 
         /* Presentations */
         .presentation-section {
@@ -677,24 +726,33 @@
             </div>
         </section>
 
-        <!-- PERSONAL SECTION -->
-        <section id="personal">
-            <h2>Personal</h2>
-            <div class="bio">
-                <p>Outside of research, I enjoy [hobbies/interests]. I'm originally from [location] and currently based in [current location].</p>
-                
-                <p>[Add more personal information, hobbies, interesting facts about yourself, travel experiences, or anything else you'd like to share].</p>
+<!-- PERSONAL SECTION -->
+<section id="personal">
+    <h2>Personal</h2>
+    
+    <h3>Activities</h3>
+    <div class="activities-grid">
+        <div class="activity-card">
+            <img src="climbing.png" alt="Indoor rock climbing" class="activity-image">
+            <div class="activity-content">
+                <div class="activity-title">Climbing</div>
+                <div class="activity-description">Forever V2</div>
             </div>
-
-            <h3>Miscellaneous</h3>
-            <div class="research-description">
-                <p>Links to blogs, photography, or other personal projects can go here.</p>
+        </div>
+        
+        <div class="activity-card">
+            <img src="snowboarding.png" alt="Snowboarding at ski resort" class="activity-image">
+            <div class="activity-content">
+                <div class="activity-title">Snowboarding</div>
+                <div class="activity-description">Started it first time when attending Copper Mountain conference. I was in a mountain, so why not?</div>
             </div>
-        </section>
+        </div>
     </div>
+</section>
+</div> <!-- closing main-content -->
 
-    <script>
-    // Navigation handling
+<script>
+// Navigation handling
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
