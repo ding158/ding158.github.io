@@ -34,18 +34,12 @@
 
         /* --- SIDEBAR --- */
         .sidebar {
-            width: 280px;
-            background: #f8fafc; /* Very light grey/white instead of dark blue */
-            border-right: 1px solid #e2e8f0; /* Thin subtle border */
-            position: fixed;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 3rem 1.5rem;
-            overflow-y: auto;
-            z-index: 1000;
-        }
+        width: 280px;
+        background: #f5f8ff; /* A very light, subtle blue tint */
+        border-right: 1px solid #e0e7ff; /* Matching light blue border */
+        /* ... other sidebar properties remain the same ... */
+        position: fixed; height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 3rem 1.5rem; overflow-y: auto; z-index: 1000;
+}
 
         .profile-photo {
             width: 160px;
@@ -70,20 +64,10 @@
             margin-bottom: 0.5rem;
         }
 
-        .sidebar nav a {
-            display: block;
-            text-decoration: none;
-            color: #475569; /* Slate grey text */
-            font-weight: 500;
-            padding: 0.8rem 1.5rem;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.8rem;
-            border-radius: 6px;
-            margin-bottom: 0.5rem;
-            transition: all 0.2s;
-        }
+        .sidebar nav a:hover {
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.08); /* Very light blue hover */
+}
 
         .sidebar nav a:hover {
             color: #2563eb;
@@ -91,12 +75,10 @@
         }
 
         .sidebar nav a.active {
-            color: #2563eb; /* Purdue/Research Blue */
-            background: #fff;
-            font-weight: 700;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            border: 1px solid #bfdbfe;
-        }
+            color: #fff; /* White text */
+            background: #2563eb; /* Solid blue background for the active link */
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2); /* Soft blue shadow */
+}
 
         /* --- MAIN CONTENT LAYOUT --- */
         .main-content {
