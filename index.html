@@ -1,724 +1,1479 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Tong Ding | PhD Candidate</title>
+
     <style>
+
         /* --- RESET & BASIC SETUP --- */
+
         * {
+
             margin: 0;
+
             padding: 0;
+
             box-sizing: border-box;
+
         }
+
+
 
         body {
+
             /* Modern Sans-Serif for better screen readability */
+
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
             line-height: 1.6;
+
             color: #333;
+
             background: #fff;
+
             display: flex;
+
             min-height: 100vh;
+
         }
+
+
 
         /* Keep the academic/formal feel for headings only */
+
         h1, h2, h3, .header-section h1 {
+
             font-family: 'Georgia', serif;
+
             color: #1a2332;
+
         }
+
+
 
         a {
+
             transition: color 0.2s;
+
         }
+
+
 
         /* --- SIDEBAR --- */
+
         .sidebar {
-        width: 280px;
-        background: #f5f8ff; /* A very light, subtle blue tint */
-        border-right: 1px solid #e0e7ff; /* Matching light blue border */
-        /* ... other sidebar properties remain the same ... */
-        position: fixed; height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 3rem 1.5rem; overflow-y: auto; z-index: 1000;
-}
+
+            width: 280px;
+
+            /* Professional Dark Blue Gradient */
+
+            background: linear-gradient(180deg, #24426a 0%, #1d3355 100%);
+
+            position: fixed;
+
+            height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            padding: 3rem 1.5rem;
+
+            box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+
+            overflow-y: auto; /* IMPORTANT: Allows scrolling on short screens */
+
+            z-index: 1000;
+
+        }
+
+
 
         .profile-photo {
+
             width: 160px;
+
             height: 160px;
+
             border-radius: 50%;
+
             object-fit: cover;
-            border: 1px solid #e2e8f0; /* Subtle border */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+
+            border: 4px solid rgba(255, 255, 255, 0.2);
+
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+
             margin-bottom: 2.5rem;
+
         }
+
+
 
         .sidebar nav {
+
             width: 100%;
+
         }
+
+
 
         .sidebar nav ul {
+
             list-style: none;
+
             width: 100%;
+
         }
+
+
 
         .sidebar nav li {
+
             margin-bottom: 0.5rem;
+
         }
 
-        .sidebar nav a:hover {
-    color: #2563eb;
-    background: rgba(37, 99, 235, 0.08); /* Very light blue hover */
-}
+
+
+        .sidebar nav a {
+
+            display: block;
+
+            text-decoration: none;
+
+            color: rgba(255, 255, 255, 0.75);
+
+            font-weight: 500;
+
+            padding: 0.8rem 1.5rem;
+
+            text-align: center;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            font-size: 0.8rem;
+
+            border-radius: 6px;
+
+        }
+
+
 
         .sidebar nav a:hover {
-            color: #2563eb;
-            background: #eff6ff; 
+
+            color: #fff;
+
+            background: rgba(255, 255, 255, 0.1);
+
         }
+
+
 
         .sidebar nav a.active {
-            color: #fff; /* White text */
-            background: #2563eb; /* Solid blue background for the active link */
-            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2); /* Soft blue shadow */
-}
+
+            color: #fff;
+
+            background: rgba(37, 99, 235, 0.5); /* Lighter blue highlight */
+
+            font-weight: 600;
+
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+        }
+
+
 
         /* --- MAIN CONTENT LAYOUT --- */
+
         .main-content {
+
             margin-left: 280px; /* Matches sidebar width */
+
             flex: 1;
+
             padding: 4rem 5rem;
+
             max-width: 1100px; /* Prevents text from getting too wide to read */
+
         }
+
+
 
         section {
+
             scroll-margin-top: 2rem;
+
             padding-top: 1rem;
+
             margin-bottom: 4rem;
+
         }
+
+
 
         /* --- HEADER SECTION --- */
+
         .header-section {
+
             margin-bottom: 3rem;
+
             border-bottom: 1px solid #eee;
+
             padding-bottom: 2rem;
+
         }
+
+
 
         .header-section h1 {
+
             font-size: 3rem;
+
             margin-bottom: 1rem;
+
             font-weight: 700;
+
         }
+
+
 
         .title-info {
+
             font-size: 1.1rem;
+
             line-height: 1.8;
+
             color: #555;
+
             float: left;
+
         }
+
+
 
         .contact-box {
+
             float: right;
+
             text-align: right;
+
         }
+
+
 
         .contact-box h3 {
+
             font-size: 1.1rem;
+
             margin-bottom: 0.5rem;
+
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Clean font for small headers */
+
             text-transform: uppercase;
+
             letter-spacing: 0.5px;
+
             color: #888;
+
         }
+
+
 
         .contact-info {
+
             margin-bottom: 0.3rem;
+
             color: #333;
+
             font-weight: 500;
+
         }
+
+
 
         .contact-info a {
+
             color: #2563eb;
+
             text-decoration: none;
+
         }
+
+
 
         .contact-info a:hover {
+
             text-decoration: underline;
+
         }
+
+
 
         /* Clearing floats */
+
         .header-section::after {
+
             content: "";
+
             display: table;
+
             clear: both;
+
         }
+
+
 
         /* --- GENERAL TYPOGRAPHY --- */
+
         h2 {
+
             font-size: 2rem;
+
             margin: 0 0 1.5rem;
+
             padding-bottom: 0.5rem;
+
             border-bottom: 3px solid #2563eb; /* Blue underline accent */
+
             display: inline-block;
+
         }
+
+
 
         h3 {
+
             font-size: 1.4rem;
+
             margin: 2rem 0 1rem;
+
             font-weight: 600;
+
         }
+
+
 
         .bio {
+
             font-size: 1.1rem;
+
             line-height: 1.8;
+
             color: #444;
+
             margin-bottom: 1.5rem;
+
         }
+
+
 
         /* --- RESEARCH PILLS --- */
+
         .interests-list {
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 0.8rem;
+
             margin: 1.5rem 0 2.5rem;
+
         }
+
+
 
         .interest-tag {
+
             background: #f3f4f6;
+
             padding: 0.5rem 1.2rem;
+
             border-radius: 50px;
+
             font-size: 0.9rem;
+
             color: #374151;
+
             font-weight: 500;
+
             transition: all 0.2s;
+
         }
+
+
 
         .interest-tag:hover {
+
             background: #dbeafe; /* Light blue */
+
             color: #1e40af; /* Dark blue text */
+
             transform: translateY(-1px);
+
         }
+
+
 
         /* --- UPDATES TABLE (Clean Version) --- */
+
         .news-table {
+
             width: 100%;
+
             border-collapse: collapse;
+
             margin-top: 1rem;
+
         }
+
+
 
         .news-table th {
+
             text-align: left;
+
             padding: 0.75rem 0;
+
             border-bottom: 2px solid #2563eb;
+
             font-weight: 600;
+
             color: #1a2332;
+
             text-transform: uppercase;
+
             font-size: 0.85rem;
+
             letter-spacing: 0.5px;
+
             font-family: sans-serif;
+
         }
+
+
 
         .news-table td {
+
             padding: 1rem 0;
+
             border-bottom: 1px solid #eee;
+
             vertical-align: top;
+
         }
+
+
 
         .date-cell {
+
             width: 120px;
+
             font-weight: 600;
+
             color: #666;
+
             font-size: 0.95rem;
+
         }
+
+
 
         .update-cell {
+
             color: #333;
+
         }
+
+
 
         /* --- LIST ITEMS (Research/Teaching) --- */
+
         ol, ul {
+
             padding-left: 0;
+
             list-style-position: inside;
+
         }
+
         
+
         /* Remove default numbers for custom styling if needed, keeping simple for now */
+
         .research-item, .teaching-item {
+
             margin-bottom: 2rem;
+
         }
+
+
 
         .research-title {
+
             font-size: 1.15rem;
+
             font-weight: 600;
+
             color: #111;
+
             margin-bottom: 0.3rem;
+
         }
+
+
 
         .research-meta {
+
             font-size: 0.95rem;
+
             color: #555;
+
             margin-bottom: 0.5rem;
+
             line-height: 1.6;
+
         }
+
+
 
         .research-description {
+
             font-size: 0.95rem;
+
             color: #666;
+
         }
+
         
+
         .research-description a {
+
             color: #2563eb;
+
             text-decoration: none;
+
             font-weight: 500;
+
         }
+
+
 
         /* --- PRESENTATIONS --- */
+
         .presentation-item {
+
             margin-bottom: 1.5rem;
+
             display: grid;
+
             grid-template-columns: 1fr auto; /* Title takes space, Year takes auto */
+
             gap: 2rem;
+
             border-bottom: 1px dashed #eee;
+
             padding-bottom: 1rem;
+
         }
+
         
+
         .presentation-item:last-child {
+
             border-bottom: none;
+
         }
+
+
 
         .presentation-type {
+
             font-size: 0.85rem;
+
             font-weight: 700;
+
             color: #2563eb; /* Blue highlight */
+
             text-transform: uppercase;
+
             margin-bottom: 0.2rem;
+
             letter-spacing: 0.5px;
+
         }
+
+
 
         .presentation-title {
+
             font-size: 1.05rem;
+
             color: #333;
+
             line-height: 1.5;
+
         }
+
+
 
         .presentation-year {
+
             font-weight: 600;
+
             color: #888;
+
         }
+
+
 
         /* --- PROFESSIONAL ACTIVITIES --- */
+
         .activity-card {
+
             background: #fff;
+
             border: 1px solid #e5e7eb;
+
             border-left: 5px solid #2563eb;
+
             padding: 1.5rem;
+
             margin-bottom: 1.5rem;
+
             border-radius: 4px;
+
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
             transition: transform 0.2s;
+
         }
+
+
 
         .activity-card:hover {
+
             transform: translateX(5px);
+
         }
+
+
 
         .activity-list li {
+
             list-style: none;
+
             position: relative;
+
             padding-left: 1.2rem;
+
             margin-bottom: 0.4rem;
+
             color: #555;
+
         }
+
+
 
         .activity-list li::before {
+
             content: "•";
+
             color: #2563eb;
+
             position: absolute;
+
             left: 0;
+
             font-weight: bold;
+
         }
+
+
 
         /* --- PERSONAL GRID --- */
+
         .activities-grid {
+
             display: grid;
+
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
             gap: 2rem;
+
             margin-top: 2rem;
+
         }
+
+
 
         .personal-card {
+
             background: #fff;
+
             border-radius: 12px;
+
             overflow: hidden;
+
             border: 1px solid #eee;
+
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+
             transition: all 0.3s ease;
+
         }
+
+
 
         .personal-card:hover {
+
             transform: translateY(-5px);
+
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
         }
+
+
 
         .activity-image {
+
             width: 100%;
+
             height: 220px;
+
             object-fit: cover;
+
         }
+
+
 
         .card-content {
+
             padding: 1.5rem;
+
         }
+
+
 
         .card-title {
+
             font-size: 1.2rem;
+
             font-weight: 600;
+
             margin-bottom: 0.5rem;
+
             font-family: 'Georgia', serif;
+
         }
+
+
 
         /* --- RESPONSIVE DESIGN --- */
+
         @media (max-width: 900px) {
+
             .sidebar {
+
                 width: 220px;
+
                 padding: 2rem 1rem;
+
             }
+
             .main-content {
+
                 margin-left: 220px;
+
                 padding: 3rem;
+
             }
+
             .profile-photo {
+
                 width: 120px;
+
                 height: 120px;
+
             }
+
         }
+
+
 
         @media (max-width: 768px) {
+
             body {
+
                 flex-direction: column;
+
             }
+
             .sidebar {
+
                 width: 100%;
+
                 height: auto;
+
                 position: relative;
+
                 padding: 2rem 1rem;
+
                 flex-direction: row; /* Horizontal layout on mobile */
+
                 flex-wrap: wrap;
+
                 justify-content: center;
+
                 gap: 1rem;
+
             }
+
             .profile-photo {
+
                 margin-bottom: 1rem;
+
                 margin-right: 1rem;
+
                 width: 100px;
+
                 height: 100px;
+
             }
+
             .sidebar nav ul {
+
                 display: flex;
+
                 flex-wrap: wrap;
+
                 justify-content: center;
+
                 gap: 0.5rem;
+
             }
+
             .main-content {
+
                 margin-left: 0;
+
                 padding: 2rem 1.5rem;
+
             }
+
             .contact-box {
+
                 float: none;
+
                 text-align: left;
+
                 margin-top: 1.5rem;
+
                 padding-top: 1rem;
+
                 border-top: 1px solid #eee;
+
             }
+
             .presentation-item {
+
                 grid-template-columns: 1fr;
+
                 gap: 0.5rem;
+
             }
+
             .presentation-right {
+
                 text-align: left;
+
             }
+
         }
+
     </style>
+
 </head>
+
 <body>
 
+
+
     <aside class="sidebar">
+
         <img src="tong-ding.png" alt="Tong Ding" class="profile-photo">
+
         <nav>
+
             <ul>
+
                 <li><a href="#home" class="nav-link active">Home</a></li>
+
                 <li><a href="#research" class="nav-link">Research</a></li>
+
                 <li><a href="#presentations" class="nav-link">Presentations</a></li>
+
                 <li><a href="#professional" class="nav-link">Professional</a></li>
+
                 <li><a href="#teaching" class="nav-link">Teaching</a></li>
+
                 <li><a href="#personal" class="nav-link">Personal</a></li>
+
             </ul>
+
         </nav>
+
     </aside>
 
+
+
     <main class="main-content">
+
         
+
         <section id="home">
+
             <div class="header-section">
+
                 <h1>Tong Ding</h1>
+
                 <div class="title-info">
+
                     PhD Candidate, Department of Mathematics<br>
+
                     Purdue University<br>
+
                     <strong>Advisor:</strong> Jianlin Xia
+
                 </div>
+
+
 
                 <div class="contact-box">
+
                     <h3>Contact</h3>
+
                     <div class="contact-info">Office: MATH 707</div>
+
                     <div class="contact-info"><a href="mailto:ding158@purdue.edu">ding158@purdue.edu</a></div>
+
                 </div>
+
             </div>
+
+
 
             <h3>Research Interests</h3>
+
             <div class="interests-list">
+
                 <span class="interest-tag">Numerical Linear Algebra</span>
+
                 <span class="interest-tag">Randomized Algorithms</span>
+
                 <span class="interest-tag">Machine Learning</span>
+
                 <span class="interest-tag">Scientific Computing</span>
+
             </div>
+
+
 
             <table class="news-table">
+
                 <thead>
+
                     <tr>
+
                         <th>Date</th>
+
                         <th>Updates</th>
+
                     </tr>
+
                 </thead>
+
                 <tbody>
+
                     <tr>
+
                         <td class="date-cell">May 2026</td>
+
                         <td class="update-cell">Will give minisymposium talk at ILAS 2026.</td>
+
                     </tr>
+
                     <tr>
+
                         <td class="date-cell">Feb 2026</td>
+
                         <td class="update-cell">Will attend the ICERM Workshop on Randomized Numerical Linear Algebra (RNLA).</td>
+
                     </tr>
+
                     <tr>
+
                         <td class="date-cell">Dec 2025</td>
+
                         <td class="update-cell">Attended the CBMS Workshop at the University of Houston.</td>
+
                     </tr>
+
                     <tr>
+
                         <td class="date-cell">Oct 2025</td>
+
                         <td class="update-cell">Gave minisymposium talk at SIAM Central States Section Annual Meeting.</td>
+
                     </tr>
+
                 </tbody>
+
             </table>
+
         </section>
+
+
 
         <section id="research">
+
             <h2>Research</h2>
+
             <p class="bio">My research bridges NLA and ML by (i) exploiting matrix structure arising in NN training and (ii) developing RNLA methods for data compression. The goal is to design fast, stable optimizers and accelerate training from an NLA perspective.</p>
+
             
+
             <p style="margin-bottom: 2rem;">
+
                 <a href="Ding_CV.pdf" target="_blank" style="display: inline-block; background: #2563eb; color: white; padding: 0.6rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: 500;">Download CV (PDF)</a>
+
             </p>
+
             
+
             <h3>Publications</h3>
+
             
+
             <div class="research-item">
+
                 <div class="research-title">Matrix analysis for shallow ReLU neural network least-squares approximations</div>
+
                 <div class="research-meta">Zhiqiang Cai, <strong>Tong Ding</strong>, Min Liu, and Jianlin Xia<br>
+
                 <span style="color: #666; font-style: italic;">Status: In preparation</span></div>
+
             </div>
+
             
+
             <div class="research-item">
+
                 <div class="research-title">A Structure-Guided Gauss-Newton Method for Shallow ReLU Neural Network</div>
+
                 <div class="research-meta">Zhiqiang Cai, <strong>Tong Ding</strong>, Min Liu, Xinyu Liu, and Jianlin Xia<br>
+
                 <span style="color: #666; font-style: italic;">Status: Submitted</span></div>
+
                 <div class="research-description">
+
                     <a href="https://arxiv.org/abs/2404.05064" target="_blank">View on arXiv →</a> 
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <section id="presentations">
+
             <h2>Presentations</h2>
+
     
+
             <h3>Talks</h3>              
-            <div class="presentation-item">
-                <div class="presentation-left">
-                    <div class="presentation-type">Lightning talk</div>
-                    <div class="presentation-title">Why Neural Network Optimization Matrices Are Ill-Conditioned and Why That’s Okay <br>
-                    <span style="color:#666; font-size: 0.95rem;">Workshop on Network Algorithms, Analysis, and Learning for Science, Berkeley, CA</span></div>
-                </div>
-                <div class="presentation-right">
-                    <div class="presentation-year">2025/11</div>
-                </div>
-            </div>
-        
-            <div class="presentation-item">
-                <div class="presentation-left">
-                    <div class="presentation-type">Minisymposium talk</div>
-                    <div class="presentation-title">Matrix Analysis and Fast Solvers in Neural Networks<br>
-                    <span style="color:#666; font-size: 0.95rem;">SIAM Central States Section Annual Meeting, Fayetteville, AR</span></div>
-                </div>
-                <div class="presentation-right">
-                    <div class="presentation-year">2025/10</div>
-                </div>
-            </div>
-        
-            <div class="presentation-item">
-                <div class="presentation-left">
-                    <div class="presentation-type">Session talk</div>
-                    <div class="presentation-title">Matrix Analysis for Shallow ReLU Neural Network Least-Squares Approximations<br>
-                    <span style="color:#666; font-size: 0.95rem;">22nd Copper Mountain Conference on Multigrid Methods, Copper Mountain, CO</span></div>
-                </div>
-                <div class="presentation-right">
-                    <div class="presentation-year">2025</div>
-                </div>
-            </div>
 
             <div class="presentation-item">
+
                 <div class="presentation-left">
-                    <div class="presentation-type">Minisymposium talk</div>
-                    <div class="presentation-title">A Structure-Guided Gauss-Newton Method for Shallow ReLU Neural Networks<br>
-                    <span style="color:#666; font-size: 0.95rem;">International Conference on Preconditioning, Atlanta, GA</span></div>
+
+                    <div class="presentation-type">Lightning talk</div>
+
+                    <div class="presentation-title">Why Neural Network Optimization Matrices Are Ill-Conditioned and Why That’s Okay <br>
+
+                    <span style="color:#666; font-size: 0.95rem;">Workshop on Network Algorithms, Analysis, and Learning for Science, Berkeley, CA</span></div>
+
                 </div>
+
                 <div class="presentation-right">
-                    <div class="presentation-year">2024</div>
+
+                    <div class="presentation-year">2025/11</div>
+
                 </div>
+
             </div>
+
+        
+
+            <div class="presentation-item">
+
+                <div class="presentation-left">
+
+                    <div class="presentation-type">Minisymposium talk</div>
+
+                    <div class="presentation-title">Matrix Analysis and Fast Solvers in Neural Networks<br>
+
+                    <span style="color:#666; font-size: 0.95rem;">SIAM Central States Section Annual Meeting, Fayetteville, AR</span></div>
+
+                </div>
+
+                <div class="presentation-right">
+
+                    <div class="presentation-year">2025/10</div>
+
+                </div>
+
+            </div>
+
+        
+
+            <div class="presentation-item">
+
+                <div class="presentation-left">
+
+                    <div class="presentation-type">Session talk</div>
+
+                    <div class="presentation-title">Matrix Analysis for Shallow ReLU Neural Network Least-Squares Approximations<br>
+
+                    <span style="color:#666; font-size: 0.95rem;">22nd Copper Mountain Conference on Multigrid Methods, Copper Mountain, CO</span></div>
+
+                </div>
+
+                <div class="presentation-right">
+
+                    <div class="presentation-year">2025</div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="presentation-item">
+
+                <div class="presentation-left">
+
+                    <div class="presentation-type">Minisymposium talk</div>
+
+                    <div class="presentation-title">A Structure-Guided Gauss-Newton Method for Shallow ReLU Neural Networks<br>
+
+                    <span style="color:#666; font-size: 0.95rem;">International Conference on Preconditioning, Atlanta, GA</span></div>
+
+                </div>
+
+                <div class="presentation-right">
+
+                    <div class="presentation-year">2024</div>
+
+                </div>
+
+            </div>
+
+
 
             <h3>Posters</h3>
+
             <div class="presentation-item">
+
                 <div class="presentation-left">
+
                     <div class="presentation-title">CBMS Conference on Research at the Interface of Applied Mathematics and Machine Learning, Houston, TX</div>
+
                 </div>
+
                 <div class="presentation-right">
+
                     <div class="presentation-year">2025/12</div>
+
                 </div>
+
             </div>
+
             <div class="presentation-item">
+
                 <div class="presentation-left">
+
                     <div class="presentation-title">NSF Computational Mathematics PI Meeting, Salt Lake City, UT</div>
+
                 </div>
+
                 <div class="presentation-right">
+
                     <div class="presentation-year">2025</div>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <section id="professional">
+
             <h2>Professional Activities</h2>
+
             
+
             <div class="activity-card">
+
                 <div class="research-title" style="color: #2563eb;">President, SIAM Student Chapter, Purdue University</div>
+
                 <div class="research-meta">2024–present</div>
+
                 <ul class="activity-list">
+
                     <li>Organized annual student conferences (2024, 2025 and 2026)</li>
+
                     <li>Co-ran CCAM seminar series</li>
+
                     <li>Community building and professional development</li>
+
                 </ul>
+
                 <div class="research-description" style="margin-top: 1rem;">
+
                     <a href="https://siampurdue.github.io/" target="_blank">SIAM Purdue Website →</a>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <section id="teaching">
+
             <h2>Teaching</h2>
+
             <p class="bio">I am passionate about teaching mathematics and helping students develop deep understanding by coding.</p>
+
             
+
             <h3>Teaching Experience</h3>
+
             
+
             <div class="teaching-item">
+
                 <div class="research-title">MA 303: Differential Equations for Engineering</div>
+
                 <div class="research-meta">Guest Lecturer | Spring 2025 | Purdue University</div>
+
                 <div class="research-description">
+
                     Delivered lectures for undergraduate students, prepared course materials, and facilitated class discussions on differential equations topics.
+
                 </div>
+
             </div>
 
+
+
             <div class="teaching-item">
+
                 <div class="research-title">MA 16600: Calculus II</div>
+
                 <div class="research-meta">Teaching Assistant | Spring 2020 | Purdue University</div>
+
                 <div class="research-description">
+
                     Led recitation sessions and held office hours to support students in mastering calculus concepts.
+
                 </div>
+
             </div>
 
+
+
             <div class="teaching-item">
+
                 <div class="research-title">Graduate Grader</div>
+
                 <div class="research-description">
+
                     Graded coursework for MA 52700 (Advanced Mathematics for Engineers), MA 35100 (Linear Algebra), and MA 45000 (Abstract Algebra).
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <section id="personal">
+
             <h2>Personal</h2>
+
             
+
             <div class="activities-grid">
+
                 <div class="personal-card">
+
                     <img src="climbing.png" alt="Indoor rock climbing" class="activity-image">
+
                     <div class="card-content">
+
                         <div class="card-title">Climbing</div>
+
                         <p style="color:#666; font-size: 0.95rem;">Forever V2. Trying to get better one hold at a time.</p>
+
                     </div>
+
                 </div>
+
                 
+
                 <div class="personal-card">
+
                     <img src="snowboarding.png" alt="Snowboarding" class="activity-image">
+
                     <div class="card-content">
+
                         <div class="card-title">Snowboarding</div>
+
                         <p style="color:#666; font-size: 0.95rem;">Started it for the first time while attending the Copper Mountain conference. I was in the mountains, so why not?</p>
+
                     </div>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
     </main>
 
+
+
     <script>
+
         // Smooth scrolling for nav links
+
         document.querySelectorAll('.nav-link').forEach(link => {
+
             link.addEventListener('click', function(e) {
+
                 e.preventDefault();
+
                 
+
                 // Update active class immediately
+
                 document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+
                 this.classList.add('active');
+
                 
+
                 // Scroll to section
+
                 const targetId = this.getAttribute('href').substring(1);
+
                 const targetSection = document.getElementById(targetId);
+
                 targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
             });
+
         });
 
+
+
         // Scroll Spy: Update nav links while scrolling
+
         const sections = document.querySelectorAll('section');
+
         const navLinks = document.querySelectorAll('.nav-link');
+
         
+
         function updateActiveNav() {
+
             let currentSection = '';
+
             
+
             sections.forEach(section => {
+
                 const sectionTop = section.offsetTop;
+
                 const sectionHeight = section.clientHeight;
+
                 const scrollPosition = window.scrollY + 150; // Offset for optical alignment
+
                 
+
                 if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+
                     currentSection = section.getAttribute('id');
+
                 }
+
             });
+
             
+
             // If we are at the very bottom of the page, highlight the last link
+
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+
                  currentSection = 'personal';
+
             }
 
+
+
             navLinks.forEach(link => {
+
                 link.classList.remove('active');
+
                 if (link.getAttribute('href') === '#' + currentSection) {
+
                     link.classList.add('active');
+
                 }
+
             });
+
         }
+
         
+
         window.addEventListener('scroll', updateActiveNav);
+
         updateActiveNav(); // Run once on load
+
     </script>
+
 </body>
+
 </html>
