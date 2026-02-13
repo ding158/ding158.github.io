@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tong Ding | PhD Candidate in Mathematics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     /* --- RESET & VARIABLES --- */
     * {
@@ -13,346 +16,282 @@
     }
 
     :root {
-      /* Minimal Professional Color Palette */
-      --primary-blue: #2563eb;
-      --primary-blue-dark: #1e40af;
-      --text-dark: #1f2937;
-      --text-medium: #4b5563;
-      --text-light: #6b7280;
-      --border-light: #e5e7eb;
-      --bg-light: #f9fafb;
+      /* Professional Academic Palette */
+      --primary: #1a365d;
+      --primary-light: #2d4a7c;
+      --accent: #2563eb;
+      --text-dark: #1a202c;
+      --text-medium: #4a5568;
+      --text-light: #718096;
+      --border: #e2e8f0;
+      --bg-subtle: #f7fafc;
       --white: #ffffff;
 
+      /* Typography */
+      --font-serif: 'Crimson Pro', Georgia, serif;
+      --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
       /* Spacing */
-      --spacing-xs: 0.5rem;
-      --spacing-sm: 1rem;
-      --spacing-md: 1.5rem;
-      --spacing-lg: 2rem;
-      --spacing-xl: 3rem;
-      --spacing-2xl: 4rem;
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --space-2xl: 4rem;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: var(--font-sans);
       line-height: 1.7;
       color: var(--text-dark);
-      background: #fafbfc;
-      display: flex;
-      min-height: 100vh;
+      background: #fefefe;
     }
 
-    h1, h2, h3 {
-      font-family: "Georgia", "Times New Roman", serif;
-      color: var(--text-dark);
-      font-weight: 600;
+    /* --- CONTAINER --- */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: var(--space-xl) var(--space-lg);
     }
 
-    /* --- SIDEBAR --- */
-    .sidebar {
-      width: 280px;
-      background: var(--white);
-      border-right: 1px solid var(--border-light);
-      position: fixed;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: var(--spacing-xl) var(--spacing-md);
-      overflow-y: auto;
-      z-index: 1000;
-      box-shadow: 1px 0 3px rgba(0, 0, 0, 0.03);
+    /* --- HEADER --- */
+    header {
+      text-align: center;
+      padding: var(--space-2xl) 0 var(--space-xl);
+      border-bottom: 2px solid var(--border);
+      margin-bottom: var(--space-2xl);
     }
 
     .profile-photo {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid var(--border-light);
-      margin-bottom: var(--spacing-xl);
-      transition: transform 0.3s ease;
+      border: 4px solid var(--border);
+      margin-bottom: var(--space-lg);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
-    .profile-photo:hover {
-      transform: scale(1.02);
-    }
-
-    .sidebar nav {
-      width: 100%;
-      margin-top: var(--spacing-sm);
-    }
-
-    .sidebar nav ul {
-      list-style: none;
-      width: 100%;
-    }
-
-    .sidebar nav li {
-      margin-bottom: 0.25rem;
-    }
-
-    .sidebar nav a {
-      display: block;
-      text-decoration: none;
-      color: var(--text-medium);
-      font-weight: 500;
-      padding: 0.7rem var(--spacing-sm);
-      text-align: left;
-      font-size: 0.9rem;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-    }
-
-    .sidebar nav a:hover {
-      color: var(--primary-blue);
-      background: var(--bg-light);
-    }
-
-    .sidebar nav a.active {
-      color: var(--primary-blue);
-      background: var(--bg-light);
-      font-weight: 600;
-    }
-
-    /* --- MAIN CONTENT --- */
-    .main-content {
-      margin-left: 280px;
-      flex: 1;
-      padding: var(--spacing-2xl) 5rem;
-      max-width: 1200px;
-    }
-
-    section {
-      scroll-margin-top: 2rem;
-      padding: var(--spacing-lg);
-      margin-bottom: var(--spacing-lg);
-      background: var(--white);
-      border-radius: 8px;
-      border: 1px solid var(--border-light);
-    }
-
-    section#home {
-      background: transparent;
-      border: none;
-      padding: 0;
-    }
-
-    /* --- HEADER SECTION --- */
-    .header-section {
-      margin-bottom: var(--spacing-xl);
-      padding: var(--spacing-lg);
-      background: var(--white);
-      border-radius: 8px;
-      border: 1px solid var(--border-light);
-    }
-
-    .header-section h1 {
-      font-size: 2.75rem;
-      margin-bottom: var(--spacing-md);
-      font-weight: 600;
-      color: var(--text-dark);
-      letter-spacing: -0.5px;
-    }
-
-    .header-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: var(--spacing-xl);
-      margin-top: var(--spacing-md);
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: var(--space-sm);
+      letter-spacing: -0.02em;
     }
 
     .title-info {
-      font-size: 1rem;
-      line-height: 1.8;
+      font-size: 1.1rem;
       color: var(--text-medium);
+      margin-bottom: var(--space-md);
+      line-height: 1.8;
     }
 
-    .title-info strong {
-      color: var(--text-dark);
-      font-weight: 600;
-    }
-
-    
-    .advisor-line{
-      color: inherit;
-    font-weight: inherit;
-  }
-
-    .advisor-line .advisor-label,
-    .advisor-line .advisor-name{
-    color: inherit;
-    font-weight: inherit;
-  }
-
-
-
-    .contact-box {
-      text-align: right;
-    }
-
-    .contact-box h3 {
-      font-size: 0.75rem;
-      margin-bottom: var(--spacing-xs);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-light);
-      font-weight: 600;
+    .advisor-line {
+      display: block;
+      margin-top: var(--space-xs);
     }
 
     .contact-info {
-      margin-bottom: 0.3rem;
-      color: var(--text-dark);
-      font-weight: 500;
-      font-size: 0.9rem;
+      display: flex;
+      gap: var(--space-lg);
+      justify-content: center;
+      align-items: center;
+      margin-top: var(--space-md);
+      font-size: 0.95rem;
+      color: var(--text-medium);
+    }
+
+    .contact-info span {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
     }
 
     .contact-info a {
-      color: var(--primary-blue);
+      color: var(--accent);
       text-decoration: none;
+      font-weight: 500;
       transition: color 0.2s;
     }
 
     .contact-info a:hover {
+      color: var(--primary-light);
       text-decoration: underline;
     }
 
-    /* --- TYPOGRAPHY --- */
+    /* --- NAVIGATION --- */
+    nav {
+      margin: var(--space-xl) 0;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: block;
+      padding: var(--space-sm) var(--space-lg);
+      text-decoration: none;
+      color: var(--text-medium);
+      font-weight: 500;
+      font-size: 0.95rem;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      border-bottom-color: var(--accent);
+    }
+
+    nav a.active {
+      color: var(--primary);
+      border-bottom-color: var(--accent);
+    }
+
+    /* --- SECTIONS --- */
+    section {
+      scroll-margin-top: 2rem;
+      margin-bottom: var(--space-2xl);
+      padding-top: var(--space-lg);
+    }
+
     h2 {
-      font-size: 1.75rem;
-      margin: 0 0 var(--spacing-md);
-      padding-bottom: var(--spacing-xs);
-      border-bottom: 2px solid var(--text-dark);
-      display: inline-block;
-      font-weight: 600;
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: var(--space-lg);
+      padding-bottom: var(--space-sm);
+      border-bottom: 2px solid var(--primary);
+      letter-spacing: -0.01em;
     }
 
     h3 {
-      font-size: 1.25rem;
-      margin: var(--spacing-lg) 0 var(--spacing-sm);
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
       font-weight: 600;
       color: var(--text-dark);
+      margin: var(--space-xl) 0 var(--space-md);
     }
 
     section h3:first-of-type {
-      margin-top: 0;
+      margin-top: var(--space-md);
     }
 
     .bio {
-      font-size: 1rem;
+      font-size: 1.05rem;
       line-height: 1.8;
       color: var(--text-medium);
-      margin-bottom: var(--spacing-md);
+      margin-bottom: var(--space-lg);
     }
 
     /* --- RESEARCH INTERESTS --- */
     .interests-list {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--spacing-xs);
-      margin: var(--spacing-md) 0;
+      gap: var(--space-sm);
+      margin: var(--space-md) 0 var(--space-xl);
     }
 
     .interest-tag {
-      background: var(--white);
-      padding: 0.5rem 1.1rem;
+      background: var(--bg-subtle);
+      padding: 0.6rem 1.2rem;
       border-radius: 6px;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: var(--text-dark);
       font-weight: 500;
-      border: 1.5px solid var(--border-light);
-      transition: all 0.2s ease;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
     }
 
     .interest-tag:hover {
-      border-color: var(--primary-blue);
-      color: var(--primary-blue);
-      background: #f0f7ff;
+      border-color: var(--accent);
+      background: #eff6ff;
+      transform: translateY(-1px);
     }
 
     /* --- UPDATES TABLE --- */
+    .news-section {
+      background: var(--bg-subtle);
+      padding: var(--space-lg);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin: var(--space-xl) 0;
+    }
+
     .news-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 0;
-      background: transparent;
-    }
-
-    .news-table thead {
-      border-bottom: 2px solid var(--text-dark);
     }
 
     .news-table th {
       text-align: left;
-      padding: var(--spacing-xs) 0;
-      padding-bottom: var(--spacing-xs);
+      padding: var(--space-xs) 0 var(--space-md);
       font-weight: 600;
       color: var(--text-dark);
       text-transform: uppercase;
       font-size: 0.75rem;
-      letter-spacing: 0.5px;
-      font-family: sans-serif;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid var(--border);
     }
 
     .news-table td {
-      padding: var(--spacing-sm) 0;
-      border-bottom: 1px solid var(--bg-light);
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--border);
       vertical-align: top;
     }
 
     .news-table tbody tr:last-child td {
       border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .news-table tbody tr {
-      transition: background 0.15s ease;
     }
 
     .date-cell {
       width: 110px;
       font-weight: 600;
-      color: var(--text-dark);
+      color: var(--primary);
       font-size: 0.9rem;
     }
 
     .update-cell {
       color: var(--text-medium);
       font-size: 0.95rem;
+      line-height: 1.6;
     }
 
-    /* --- RESEARCH ITEMS (Publications compact like Talks/Posters) --- */
+    /* --- RESEARCH ITEMS --- */
     .research-item {
-      padding: 0.4rem 0;
-      margin-bottom: 0;
-      background: transparent;
-      border-radius: 0;
-      border: none;
-      transition: none;
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .research-item:not(:last-child) {
-      border-bottom: 1px solid var(--bg-light);
-    }
-
-    .research-item:hover {
-      background: transparent;
+    .research-item:last-child {
+      border-bottom: none;
     }
 
     .research-title {
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: var(--text-dark);
-      margin-bottom: 0.15rem;
-      line-height: 1.45;
-      overflow-wrap: anywhere;
+      margin-bottom: var(--space-xs);
+      line-height: 1.5;
     }
 
     .research-meta {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--text-medium);
-      margin-bottom: 0.15rem;
-      line-height: 1.45;
+      margin-bottom: var(--space-xs);
+      line-height: 1.6;
     }
 
     .research-meta strong {
@@ -362,244 +301,267 @@
     .research-description {
       font-size: 0.9rem;
       color: var(--text-light);
-      margin-top: 0.15rem;
+      margin-top: var(--space-xs);
     }
 
     .research-description a {
-      color: var(--primary-blue);
+      color: var(--accent);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.2s;
     }
 
     .research-description a:hover {
       text-decoration: underline;
     }
 
-    /* CV Link */
+    /* --- CV LINK --- */
     .cv-link {
       display: inline-block;
-      color: var(--primary-blue);
+      color: var(--accent);
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.95rem;
-      padding: 0.5rem 1rem;
-      border: 1.5px solid var(--primary-blue);
+      padding: 0.7rem 1.5rem;
+      border: 2px solid var(--accent);
       border-radius: 6px;
       transition: all 0.2s;
       background: var(--white);
     }
 
     .cv-link:hover {
-      background: var(--primary-blue);
+      background: var(--accent);
       color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
     }
 
     /* --- PRESENTATIONS --- */
-    .presentation-item{
-      padding: 0.4rem 0;
-      margin-bottom: 0;
-      gap: 0.75rem;
+    .presentation-item {
+      padding: var(--space-md) 0;
       display: flex;
-      align-items: flex-start;
+      gap: var(--space-lg);
+      border-bottom: 1px solid var(--border);
     }
 
-    .presentation-item:not(:last-child){
-      border-bottom: 1px solid var(--bg-light);
+    .presentation-item:last-child {
+      border-bottom: none;
     }
 
-    .presentation-year{
-      min-width: 60px;
-      padding-top: 0;
-      line-height: 1.4;
+    .presentation-year {
+      min-width: 80px;
       font-weight: 600;
-      color: var(--text-medium);
-      font-size: 0.85rem;
+      color: var(--primary);
+      font-size: 0.9rem;
       flex-shrink: 0;
     }
 
-    .presentation-content{
+    .presentation-content {
       flex: 1;
-      min-width: 0;
     }
 
-    .presentation-title{
-      font-size: 0.95rem;
+    .presentation-title {
+      font-size: 1rem;
       color: var(--text-dark);
-      line-height: 1.45;
-      margin-bottom: 0;
-      overflow-wrap: anywhere;
+      line-height: 1.6;
+      margin-bottom: var(--space-xs);
     }
 
-    .presentation-type{
+    .presentation-type {
       color: var(--text-light);
       font-size: 0.9rem;
+      font-style: italic;
     }
 
-    /* Talk location as a left-aligned block (no left margin) */
-    .presentation-location{
+    .presentation-location {
       display: block;
       color: var(--text-light);
-      margin-left: 0;         /* fixes the small leading space */
-      font-size: 0.85rem;
-      line-height: 1.45;
-      margin-top: 0.1rem;
-      overflow-wrap: anywhere;
-      word-break: break-word;
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+      line-height: 1.5;
     }
 
-    /* Inline location (for Posters line) */
-    .presentation-location.inline{
+    .presentation-location.inline {
       display: inline;
       margin-left: 0.5rem;
-      margin-top: 0;
     }
 
-    #presentations h3{
-      margin: 1rem 0 0.5rem;
+    /* --- PROFESSIONAL ACTIVITIES --- */
+    .activity-item {
+      padding: var(--space-md) 0;
+      display: flex;
+      gap: var(--space-lg);
+      border-bottom: 1px solid var(--border);
     }
 
-    /* --- PROFESSIONAL ACTIVITIES (no color block; list style) --- */
-    .activity-card {
-      background: transparent;
-      border-left: none;
-      padding: 0;
-      border-radius: 0;
-      transition: none;
+    .activity-item:last-child {
+      border-bottom: none;
     }
 
-    .activity-card:hover {
-      background: transparent;
-      border-left: none;
+    .activity-year {
+      min-width: 120px;
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.9rem;
+      flex-shrink: 0;
     }
 
-    /* tighter bullets under Professional */
+    .activity-content {
+      flex: 1;
+    }
+
+    .activity-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: var(--space-sm);
+    }
+
     .activity-list {
       list-style: none;
-      margin-top: 0.25rem;
+      margin-top: var(--space-xs);
     }
 
     .activity-list li {
       position: relative;
       padding-left: 1.2rem;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.3rem;
       color: var(--text-medium);
-      line-height: 1.45;
-      font-size: 0.9rem;
+      line-height: 1.6;
+      font-size: 0.95rem;
     }
 
     .activity-list li::before {
       content: "•";
-      color: var(--primary-blue);
+      color: var(--accent);
       position: absolute;
       left: 0;
       font-weight: bold;
     }
 
-    /* --- TEACHING (no color boxes; compact list rows) --- */
+    /* --- TEACHING --- */
     .teaching-item {
-      padding: 0.4rem 0;
-      margin-bottom: 0;
-      background: transparent;
-      border-radius: 0;
-      border: none;
-      transition: none;
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--border);
     }
 
-    .teaching-item:not(:last-child){
-      border-bottom: 1px solid var(--bg-light);
+    .teaching-item:last-child {
+      border-bottom: none;
     }
 
-    .teaching-item:hover {
-      background: transparent;
-      border: none;
+    .teaching-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: var(--space-xs);
+    }
+
+    .teaching-meta {
+      font-size: 0.95rem;
+      color: var(--text-medium);
+      margin-bottom: var(--space-xs);
+    }
+
+    .teaching-description {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      margin-top: var(--space-2xl);
+      padding: var(--space-xl) 0 var(--space-lg);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.9rem;
     }
 
     /* --- RESPONSIVE DESIGN --- */
-    @media (max-width: 1024px) {
-      .sidebar {
-        width: 240px;
-        padding: var(--spacing-lg) var(--spacing-sm);
+    @media (max-width: 768px) {
+      .container {
+        padding: var(--space-lg) var(--space-md);
       }
-      .main-content {
-        margin-left: 240px;
-        padding: var(--spacing-lg) var(--spacing-lg);
+
+      h1 {
+        font-size: 2.25rem;
       }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      header {
+        padding: var(--space-xl) 0 var(--space-lg);
+      }
+
       .profile-photo {
-        width: 130px;
-        height: 130px;
+        width: 140px;
+        height: 140px;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      nav a {
+        padding: var(--space-sm);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .presentation-item,
+      .activity-item {
+        flex-direction: column;
+        gap: var(--space-xs);
+      }
+
+      .presentation-year,
+      .activity-year {
+        min-width: auto;
+      }
+
+      .interests-list {
+        justify-content: center;
       }
     }
 
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
+    /* --- SMOOTH ANIMATIONS --- */
+    @media (prefers-reduced-motion: no-preference) {
+      * {
+        scroll-behavior: smooth;
       }
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding: var(--spacing-lg);
-        flex-direction: column;
-        align-items: center;
-        border-right: none;
-        border-bottom: 1px solid var(--border-light);
-      }
-      .profile-photo {
-        width: 100px;
-        height: 100px;
-        margin-bottom: var(--spacing-md);
-      }
-      .sidebar nav {
-        margin-top: var(--spacing-md);
-      }
-      .sidebar nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: var(--spacing-xs);
-      }
-      .sidebar nav li {
-        margin-bottom: 0;
-      }
-      .sidebar nav a {
-        font-size: 0.8rem;
-        padding: 0.5rem 0.8rem;
-      }
-      .main-content {
-        margin-left: 0;
-        padding: var(--spacing-md);
-      }
-      section {
-        padding: var(--spacing-md);
-      }
-      .header-section {
-        padding: var(--spacing-md);
-      }
-      .header-section h1 {
-        font-size: 2rem;
-      }
-      .header-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-      }
-      .contact-box {
-        text-align: left;
-      }
-      .presentation-item {
-        flex-direction: column;
-        gap: 0.3rem;
-      }
-      .presentation-year {
-        min-width: auto;
+
+      .interest-tag,
+      .cv-link,
+      nav a {
+        transition: all 0.2s ease;
       }
     }
   </style>
 </head>
 <body>
 
-  <aside class="sidebar">
-    <img src="tong-ding.png" alt="Tong Ding" class="profile-photo" />
+  <div class="container">
+    <header>
+      <img src="tong-ding.png" alt="Tong Ding" class="profile-photo" />
+      <h1>Tong Ding</h1>
+      <div class="title-info">
+        PhD Candidate, Department of Mathematics<br />
+        Purdue University<br />
+        <span class="advisor-line">Advisor: Jianlin Xia</span>
+      </div>
+      <div class="contact-info">
+        <span>📍 Office: MATH 707</span>
+        <span>📧 <a href="mailto:ding158@purdue.edu">ding158@purdue.edu</a></span>
+      </div>
+    </header>
+
     <nav>
       <ul>
         <li><a href="#home" class="nav-link active">Home</a></li>
@@ -609,33 +571,8 @@
         <li><a href="#teaching" class="nav-link">Teaching</a></li>
       </ul>
     </nav>
-  </aside>
-
-  <main class="main-content">
 
     <section id="home">
-      <div class="header-section">
-        <h1>Tong Ding</h1>
-        <div class="header-grid">
-          <div class="title-info">
-            PhD Candidate, Department of Mathematics<br />
-            Purdue University<br />
-            <span class="advisor-line">
-              <span class="advisor-label">Advisor:</span>
-              <span class="advisor-name">Jianlin Xia</span>
-            </span>
-          </div>
-
-          <div class="contact-box">
-            <h3>Contact</h3>
-            <div class="contact-info">Office: MATH 707</div>
-            <div class="contact-info">
-              <a href="mailto:ding158@purdue.edu">ding158@purdue.edu</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <h3>Research Interests</h3>
       <div class="interests-list">
         <span class="interest-tag">Numerical Linear Algebra</span>
@@ -644,8 +581,8 @@
         <span class="interest-tag">Scientific Computing</span>
       </div>
 
-      <h3 style="margin-top: var(--spacing-xl);">Recent Updates</h3>
-      <div style="background: var(--white); padding: var(--spacing-md); border-radius: 6px; border: 1px solid var(--border-light);">
+      <h3>Recent Updates</h3>
+      <div class="news-section">
         <table class="news-table">
           <thead>
             <tr>
@@ -674,13 +611,11 @@
     <section id="research">
       <h2>Research</h2>
       <p class="bio">
-        My research bridges NLA and ML by (i) exploiting matrix structure arising in NN training and
-        (ii) developing RNLA methods for data compression. The goal is to design fast, stable optimizers
-        and accelerate training from an NLA perspective.
+        My research bridges numerical linear algebra and machine learning by (i) exploiting matrix structure arising in neural network training and (ii) developing randomized numerical linear algebra methods for data compression. The goal is to design fast, stable optimizers and accelerate training from a numerical linear algebra perspective.
       </p>
 
-      <p style="margin-bottom: var(--spacing-lg);">
-        <a href="Ding_CV.pdf" target="_blank" class="cv-link">CV (PDF)</a>
+      <p style="margin-bottom: var(--space-xl);">
+        <a href="Ding_CV.pdf" target="_blank" class="cv-link">Download CV (PDF)</a>
       </p>
 
       <h3>Publications</h3>
@@ -689,7 +624,7 @@
         <div class="research-title">Matrix analysis for shallow ReLU neural network least-squares approximations</div>
         <div class="research-meta">
           Zhiqiang Cai, <strong>Tong Ding</strong>, Min Liu, and Jianlin Xia<br />
-          <span style="color: var(--text-light); font-style: italic;">Status: In preparation</span>
+          <span style="font-style: italic;">Status: In preparation</span>
         </div>
       </div>
 
@@ -697,7 +632,7 @@
         <div class="research-title">A Structure-Guided Gauss-Newton Method for Shallow ReLU Neural Network</div>
         <div class="research-meta">
           Zhiqiang Cai, <strong>Tong Ding</strong>, Min Liu, Xinyu Liu, and Jianlin Xia<br />
-          <span style="color: var(--text-light); font-style: italic;">Status: Submitted</span>
+          <span style="font-style: italic;">Status: Submitted</span>
         </div>
         <div class="research-description">
           <a href="https://arxiv.org/abs/2404.05064" target="_blank">View on arXiv →</a>
@@ -709,6 +644,7 @@
       <h2>Presentations</h2>
 
       <h3>Talks</h3>
+      
       <div class="presentation-item">
         <div class="presentation-year">2025/11</div>
         <div class="presentation-content">
@@ -792,7 +728,8 @@
           </div>
         </div>
       </div>
-       <div class="presentation-item">
+
+      <div class="presentation-item">
         <div class="presentation-year">2024/6</div>
         <div class="presentation-content">
           <div class="presentation-title">
@@ -801,12 +738,13 @@
           </div>
         </div>
       </div>
+
       <div class="presentation-item">
         <div class="presentation-year">2019/5</div>
         <div class="presentation-content">
           <div class="presentation-title">
             Purdue Undergraduate Research Exhibition
-            <span class="presentation-location inline">West Lafayette, IN </span>
+            <span class="presentation-location inline">West Lafayette, IN</span>
           </div>
         </div>
       </div>
@@ -815,19 +753,14 @@
     <section id="professional">
       <h2>Professional Activities</h2>
 
-     
-      <div class="presentation-item">
-        <div class="presentation-year">2024/1–2026/5</div>
-        <div class="presentation-content">
-          <div class="presentation-title">
-            President, SIAM Student Chapter, Purdue University
-          </div>
-
+      <div class="activity-item">
+        <div class="activity-year">2024/1 – 2026/5</div>
+        <div class="activity-content">
+          <div class="activity-title">President, SIAM Student Chapter, Purdue University</div>
           <ul class="activity-list">
-            <li>Organized annual student conferences (2024, 2025 and 2026)</li>
+            <li>Organized annual student conferences (2024, 2025, and 2026)</li>
           </ul>
-
-          <div class="research-description" style="margin-top: 0.25rem;">
+          <div class="research-description" style="margin-top: var(--space-xs);">
             <a href="https://siampurdue.github.io/" target="_blank">SIAM Purdue Website →</a>
           </div>
         </div>
@@ -836,39 +769,39 @@
 
     <section id="teaching">
       <h2>Teaching</h2>
-      <p class="bio">I am passionate about teaching mathematics and helping students develop deep understanding by coding.</p>
+      <p class="bio">I am passionate about teaching mathematics and helping students develop deep understanding through coding and hands-on problem solving.</p>
 
       <h3>Teaching Experience</h3>
 
       <div class="teaching-item">
-        <div class="research-title">MA 303: Differential Equations for Engineering</div>
-        <div class="research-meta">Guest Lecturer | Spring 2025 | Purdue University</div>
-        <div class="research-description">
-          Delivered lectures for undergraduate students, prepared course materials, and facilitated class discussions on
-          differential equations topics.
+        <div class="teaching-title">MA 303: Differential Equations for Engineering</div>
+        <div class="teaching-meta">Guest Lecturer | Spring 2025 | Purdue University</div>
+        <div class="teaching-description">
+          Delivered lectures for undergraduate students, prepared course materials, and facilitated class discussions on differential equations topics.
         </div>
       </div>
 
       <div class="teaching-item">
-        <div class="research-title">MA 16600: Calculus II</div>
-        <div class="research-meta">Teaching Assistant | Spring 2020 | Purdue University</div>
-        <div class="research-description">
+        <div class="teaching-title">MA 16600: Calculus II</div>
+        <div class="teaching-meta">Teaching Assistant | Spring 2020 | Purdue University</div>
+        <div class="teaching-description">
           Led recitation sessions and held office hours to support students in mastering calculus concepts.
         </div>
       </div>
 
       <div class="teaching-item">
-        <div class="research-title">Graduate Grader</div>
-        <div class="research-description">
-          Graded coursework for MA 52700 (Advanced Mathematics for Engineers), MA 35100 (Linear Algebra), and MA 45000
-          (Abstract Algebra).
+        <div class="teaching-title">Graduate Grader</div>
+        <div class="teaching-description">
+          Graded coursework for MA 52700 (Advanced Mathematics for Engineers), MA 35100 (Linear Algebra), and MA 45000 (Abstract Algebra).
         </div>
       </div>
     </section>
 
-  </main>
+    <footer>
+      <p>© 2026 Tong Ding. Last updated February 2026.</p>
+    </footer>
+  </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
     // Smooth scrolling for nav links
     document.querySelectorAll(".nav-link").forEach(link => {
@@ -897,7 +830,7 @@
     }
 
     function updateActiveNav() {
-      const scrollPosition = window.scrollY + 160;
+      const scrollPosition = window.scrollY + 200;
 
       let currentSectionId = sections[0]?.id || "home";
       for (const section of sections) {
@@ -909,7 +842,6 @@
         }
       }
 
-      // If near the bottom, pin to last section
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
         currentSectionId = sections[sections.length - 1]?.id || currentSectionId;
       }
