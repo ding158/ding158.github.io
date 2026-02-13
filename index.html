@@ -382,53 +382,62 @@
     }
 
     /* --- PRESENTATIONS --- */
-    .presentation-item {
-      margin-bottom: var(--spacing-sm);
-      padding: var(--spacing-sm) 0;
-      display: flex;
-      gap: var(--spacing-md);
-      align-items: flex-start;
-    }
 
-    .presentation-item:not(:last-child) {
-      border-bottom: 1px solid var(--bg-light);
-    }
+/* Make Talks/Posters lists more compact */
+.presentation-item{
+  padding: 0.4rem 0;     /* tighter row padding */
+  margin-bottom: 0;      /* remove extra gap between items */
+  gap: 0.75rem;          /* tighter gap between date and content */
+  display: flex;
+  align-items: flex-start;
+}
 
-    .presentation-year {
-      font-weight: 600;
-      color: var(--text-medium);
-      font-size: 0.85rem;
-      min-width: 70px;
-      flex-shrink: 0;
-      padding-top: 0.1rem;
-    }
+.presentation-item:not(:last-child){
+  border-bottom: 1px solid var(--bg-light);
+}
 
-    /* Robust wrapping in flex layouts */
-    .presentation-content {
-      flex: 1;
-      min-width: 0;
-    }
+.presentation-year{
+  min-width: 60px;       /* slightly narrower date column */
+  padding-top: 0;
+  line-height: 1.4;
+  font-weight: 600;
+  color: var(--text-medium);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
 
-    .presentation-title {
-      font-size: 0.95rem;
-      color: var(--text-dark);
-      line-height: 1.6;
-      margin-bottom: 0.2rem;
-      overflow-wrap: anywhere;
-    }
+/* Robust wrapping in flex layouts */
+.presentation-content{
+  flex: 1;
+  min-width: 0;
+}
 
-    .presentation-type {
-      color: var(--text-light);
-      font-size: 0.9rem;
-    }
+.presentation-title{
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.45;     /* tighter than 1.6 */
+  margin-bottom: 0;      /* remove extra vertical space */
+  overflow-wrap: anywhere;
+}
 
-   .presentation-location {
-    display: inline;
-    color: var(--text-light);
-    margin-left: 0.5rem;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    }
+.presentation-type{
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.presentation-location{
+  display: inline;       /* so it stays on same line when you use <span> */
+  color: var(--text-light);
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Reduce extra whitespace around Talks/Posters headings */
+#presentations h3{
+  margin: 1rem 0 0.5rem;
+}
 
 
     /* --- PROFESSIONAL ACTIVITIES --- */
