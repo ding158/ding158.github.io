@@ -176,6 +176,25 @@
       border-bottom: 2px solid var(--primary);
       letter-spacing: -0.01em;
     }
+    
+    h2 .cv-link-inline {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      margin-left: 0.5rem;
+      padding: 0.25rem 0.7rem;
+      border: 1.5px solid var(--accent);
+      border-radius: 4px;
+      transition: all 0.2s;
+      font-family: var(--font-sans);
+      letter-spacing: 0;
+    }
+    
+    h2 .cv-link-inline:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
 
     h3 {
       font-family: var(--font-serif);
@@ -580,6 +599,10 @@
         <span class="interest-tag">Machine Learning</span>
         <span class="interest-tag">Scientific Computing</span>
       </div>
+      
+      <p class="bio" style="margin-top: var(--space-md);">
+        My research bridges numerical linear algebra and machine learning by (i) exploiting matrix structure arising in neural network training and (ii) developing randomized numerical linear algebra methods for data compression. The goal is to design fast, stable optimizers and accelerate training from a numerical linear algebra perspective.
+      </p>
 
       <h3>Recent Updates</h3>
       <div class="news-section">
@@ -609,16 +632,7 @@
     </section>
 
     <section id="research">
-      <h2>Research</h2>
-      <p class="bio">
-        My research bridges numerical linear algebra and machine learning by (i) exploiting matrix structure arising in neural network training and (ii) developing randomized numerical linear algebra methods for data compression. The goal is to design fast, stable optimizers and accelerate training from a numerical linear algebra perspective.
-      </p>
-
-      <p style="margin-bottom: var(--space-md);">
-        <a href="Ding_CV.pdf" target="_blank" class="cv-link">Download CV (PDF)</a>
-      </p>
-
-      <h3>Publications</h3>
+      <h2>Publications <a href="Ding_CV.pdf" target="_blank" class="cv-link-inline">CV</a></h2>
 
       <div class="research-item">
         <div class="research-title">Matrix analysis for shallow ReLU neural network least-squares approximations</div>
