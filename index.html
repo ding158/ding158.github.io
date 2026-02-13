@@ -422,12 +422,14 @@
       font-size: 0.9rem;
     }
 
-    .presentation-location {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      margin-top: 0.1rem;
-      overflow-wrap: anywhere;
+   .presentation-location {
+    display: inline;
+    color: var(--text-light);
+    margin-left: 0.5rem;
+    overflow-wrap: anywhere;
+    word-break: break-word;
     }
+
 
     /* --- PROFESSIONAL ACTIVITIES --- */
     .activity-card {
@@ -736,30 +738,35 @@
       <h3>Posters</h3>
 
       <div class="presentation-item">
-        <div class="presentation-year">2026/2</div>
-        <div class="presentation-content">
-          <div class="presentation-title">ICERM Workshop on Randomized Numerical Linear Algebra (RNLA)</div>
-          <div class="presentation-location">Providence, RI</div>
-        </div>
+          <div class="presentation-year">2026/2</div>
+            <div class="presentation-content">
+            <div class="presentation-title">
+            ICERM Workshop on Randomized Numerical Linear Algebra (RNLA)
+            <span class="presentation-location">Providence, RI</span>
+          </div>
       </div>
+    </div>
 
       <div class="presentation-item">
         <div class="presentation-year">2025/12</div>
         <div class="presentation-content">
           <div class="presentation-title">
             CBMS Conference on Research at the Interface of Applied Mathematics and Machine Learning
+            <span class="presentation-location">Houston, TX</span>
+            </div>
           </div>
-          <div class="presentation-location">Houston, TX</div>
         </div>
-      </div>
 
-      <div class="presentation-item">
-        <div class="presentation-year">2025/7</div>
+    <div class="presentation-item">
+      <div class="presentation-year">2025/7</div>
         <div class="presentation-content">
-          <div class="presentation-title">NSF Computational Mathematics PI Meeting</div>
-          <div class="presentation-location">Salt Lake City, UT</div>
-        </div>
+        <div class="presentation-title">
+          NSF Computational Mathematics PI Meeting
+        <span class="presentation-location">Salt Lake City, UT</span>
       </div>
+      </div>
+    </div>
+
     </section>
 
     <section id="professional">
