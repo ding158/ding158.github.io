@@ -51,55 +51,55 @@
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: var(--space-xl) var(--space-lg);
+      padding: var(--space-lg) var(--space-md);
     }
 
     /* --- HEADER --- */
     header {
       text-align: center;
-      padding: var(--space-2xl) 0 var(--space-xl);
+      padding: var(--space-lg) 0 var(--space-md);
       border-bottom: 2px solid var(--border);
-      margin-bottom: var(--space-2xl);
+      margin-bottom: var(--space-lg);
     }
 
     .profile-photo {
-      width: 180px;
-      height: 180px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--border);
-      margin-bottom: var(--space-lg);
+      border: 3px solid var(--border);
+      margin-bottom: var(--space-md);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
     h1 {
       font-family: var(--font-serif);
-      font-size: 3rem;
+      font-size: 2.25rem;
       font-weight: 700;
       color: var(--primary);
-      margin-bottom: var(--space-sm);
+      margin-bottom: var(--space-xs);
       letter-spacing: -0.02em;
     }
 
     .title-info {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--text-medium);
-      margin-bottom: var(--space-md);
-      line-height: 1.8;
+      margin-bottom: var(--space-sm);
+      line-height: 1.6;
     }
 
     .advisor-line {
       display: block;
-      margin-top: var(--space-xs);
+      margin-top: 0.25rem;
     }
 
     .contact-info {
       display: flex;
-      gap: var(--space-lg);
+      gap: var(--space-md);
       justify-content: center;
       align-items: center;
-      margin-top: var(--space-md);
-      font-size: 0.95rem;
+      margin-top: var(--space-sm);
+      font-size: 0.9rem;
       color: var(--text-medium);
     }
 
@@ -123,7 +123,7 @@
 
     /* --- NAVIGATION --- */
     nav {
-      margin: var(--space-xl) 0;
+      margin: var(--space-md) 0;
       text-align: center;
       border-bottom: 1px solid var(--border);
       padding-bottom: 0;
@@ -139,11 +139,11 @@
 
     nav a {
       display: block;
-      padding: var(--space-sm) var(--space-lg);
+      padding: 0.6rem var(--space-md);
       text-decoration: none;
       color: var(--text-medium);
       font-weight: 500;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       border-bottom: 3px solid transparent;
       transition: all 0.2s;
       letter-spacing: 0.02em;
@@ -162,53 +162,53 @@
     /* --- SECTIONS --- */
     section {
       scroll-margin-top: 2rem;
-      margin-bottom: var(--space-2xl);
-      padding-top: var(--space-lg);
+      margin-bottom: var(--space-xl);
+      padding-top: var(--space-sm);
     }
 
     h2 {
       font-family: var(--font-serif);
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 700;
       color: var(--primary);
-      margin-bottom: var(--space-lg);
-      padding-bottom: var(--space-sm);
+      margin-bottom: var(--space-md);
+      padding-bottom: 0.4rem;
       border-bottom: 2px solid var(--primary);
       letter-spacing: -0.01em;
     }
 
     h3 {
       font-family: var(--font-serif);
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       font-weight: 600;
       color: var(--text-dark);
-      margin: var(--space-xl) 0 var(--space-md);
+      margin: var(--space-lg) 0 var(--space-sm);
     }
 
     section h3:first-of-type {
-      margin-top: var(--space-md);
+      margin-top: var(--space-sm);
     }
 
     .bio {
-      font-size: 1.05rem;
-      line-height: 1.8;
+      font-size: 1rem;
+      line-height: 1.7;
       color: var(--text-medium);
-      margin-bottom: var(--space-lg);
+      margin-bottom: var(--space-md);
     }
 
     /* --- RESEARCH INTERESTS --- */
     .interests-list {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--space-sm);
-      margin: var(--space-md) 0 var(--space-xl);
+      gap: 0.5rem;
+      margin: var(--space-sm) 0 var(--space-lg);
     }
 
     .interest-tag {
       background: var(--bg-subtle);
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+      font-size: 0.85rem;
       color: var(--text-dark);
       font-weight: 500;
       border: 1px solid var(--border);
@@ -224,10 +224,10 @@
     /* --- UPDATES TABLE --- */
     .news-section {
       background: var(--bg-subtle);
-      padding: var(--space-lg);
-      border-radius: 8px;
+      padding: var(--space-md);
+      border-radius: 6px;
       border: 1px solid var(--border);
-      margin: var(--space-xl) 0;
+      margin: var(--space-md) 0;
     }
 
     .news-table {
@@ -237,17 +237,17 @@
 
     .news-table th {
       text-align: left;
-      padding: var(--space-xs) 0 var(--space-md);
+      padding: 0.25rem 0 0.5rem;
       font-weight: 600;
       color: var(--text-dark);
       text-transform: uppercase;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       letter-spacing: 0.05em;
       border-bottom: 2px solid var(--border);
     }
 
     .news-table td {
-      padding: var(--space-md) 0;
+      padding: 0.6rem 0;
       border-bottom: 1px solid var(--border);
       vertical-align: top;
     }
@@ -257,21 +257,21 @@
     }
 
     .date-cell {
-      width: 110px;
+      width: 100px;
       font-weight: 600;
       color: var(--primary);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .update-cell {
       color: var(--text-medium);
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
 
     /* --- RESEARCH ITEMS --- */
     .research-item {
-      padding: var(--space-md) 0;
+      padding: 0.6rem 0;
       border-bottom: 1px solid var(--border);
     }
 
@@ -280,18 +280,18 @@
     }
 
     .research-title {
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--text-dark);
-      margin-bottom: var(--space-xs);
-      line-height: 1.5;
+      margin-bottom: 0.25rem;
+      line-height: 1.4;
     }
 
     .research-meta {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: var(--text-medium);
-      margin-bottom: var(--space-xs);
-      line-height: 1.6;
+      margin-bottom: 0.2rem;
+      line-height: 1.5;
     }
 
     .research-meta strong {
@@ -299,9 +299,9 @@
     }
 
     .research-description {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text-light);
-      margin-top: var(--space-xs);
+      margin-top: 0.2rem;
     }
 
     .research-description a {
@@ -320,10 +320,10 @@
       color: var(--accent);
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+      padding: 0.5rem 1.2rem;
       border: 2px solid var(--accent);
-      border-radius: 6px;
+      border-radius: 5px;
       transition: all 0.2s;
       background: var(--white);
     }
@@ -337,9 +337,9 @@
 
     /* --- PRESENTATIONS --- */
     .presentation-item {
-      padding: var(--space-md) 0;
+      padding: 0.5rem 0;
       display: flex;
-      gap: var(--space-lg);
+      gap: var(--space-md);
       border-bottom: 1px solid var(--border);
     }
 
@@ -348,10 +348,10 @@
     }
 
     .presentation-year {
-      min-width: 80px;
+      min-width: 70px;
       font-weight: 600;
       color: var(--primary);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       flex-shrink: 0;
     }
 
@@ -360,36 +360,36 @@
     }
 
     .presentation-title {
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: var(--text-dark);
-      line-height: 1.6;
-      margin-bottom: var(--space-xs);
+      line-height: 1.4;
+      margin-bottom: 0.15rem;
     }
 
     .presentation-type {
       color: var(--text-light);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-style: italic;
     }
 
     .presentation-location {
       display: block;
       color: var(--text-light);
-      font-size: 0.9rem;
-      margin-top: 0.25rem;
-      line-height: 1.5;
+      font-size: 0.85rem;
+      margin-top: 0.15rem;
+      line-height: 1.4;
     }
 
     .presentation-location.inline {
       display: inline;
-      margin-left: 0.5rem;
+      margin-left: 0.4rem;
     }
 
     /* --- PROFESSIONAL ACTIVITIES --- */
     .activity-item {
-      padding: var(--space-md) 0;
+      padding: 0.6rem 0;
       display: flex;
-      gap: var(--space-lg);
+      gap: var(--space-md);
       border-bottom: 1px solid var(--border);
     }
 
@@ -398,10 +398,10 @@
     }
 
     .activity-year {
-      min-width: 120px;
+      min-width: 110px;
       font-weight: 600;
       color: var(--primary);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       flex-shrink: 0;
     }
 
@@ -410,24 +410,24 @@
     }
 
     .activity-title {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--text-dark);
-      margin-bottom: var(--space-sm);
+      margin-bottom: 0.3rem;
     }
 
     .activity-list {
       list-style: none;
-      margin-top: var(--space-xs);
+      margin-top: 0.25rem;
     }
 
     .activity-list li {
       position: relative;
-      padding-left: 1.2rem;
-      margin-bottom: 0.3rem;
+      padding-left: 1rem;
+      margin-bottom: 0.2rem;
       color: var(--text-medium);
-      line-height: 1.6;
-      font-size: 0.95rem;
+      line-height: 1.5;
+      font-size: 0.85rem;
     }
 
     .activity-list li::before {
@@ -440,7 +440,7 @@
 
     /* --- TEACHING --- */
     .teaching-item {
-      padding: var(--space-md) 0;
+      padding: 0.6rem 0;
       border-bottom: 1px solid var(--border);
     }
 
@@ -449,60 +449,60 @@
     }
 
     .teaching-title {
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--text-dark);
-      margin-bottom: var(--space-xs);
+      margin-bottom: 0.25rem;
     }
 
     .teaching-meta {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: var(--text-medium);
-      margin-bottom: var(--space-xs);
+      margin-bottom: 0.25rem;
     }
 
     .teaching-description {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: var(--text-light);
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     /* --- FOOTER --- */
     footer {
-      margin-top: var(--space-2xl);
-      padding: var(--space-xl) 0 var(--space-lg);
+      margin-top: var(--space-xl);
+      padding: var(--space-md) 0;
       border-top: 1px solid var(--border);
       text-align: center;
       color: var(--text-light);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     /* --- RESPONSIVE DESIGN --- */
     @media (max-width: 768px) {
       .container {
-        padding: var(--space-lg) var(--space-md);
+        padding: var(--space-md) var(--space-sm);
       }
 
       h1 {
-        font-size: 2.25rem;
+        font-size: 1.85rem;
       }
 
       h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
       }
 
       header {
-        padding: var(--space-xl) 0 var(--space-lg);
+        padding: var(--space-md) 0;
       }
 
       .profile-photo {
-        width: 140px;
-        height: 140px;
+        width: 100px;
+        height: 100px;
       }
 
       .contact-info {
         flex-direction: column;
-        gap: var(--space-sm);
+        gap: var(--space-xs);
       }
 
       nav ul {
@@ -511,14 +511,14 @@
       }
 
       nav a {
-        padding: var(--space-sm);
+        padding: 0.5rem;
         border-bottom: 1px solid var(--border);
       }
 
       .presentation-item,
       .activity-item {
         flex-direction: column;
-        gap: var(--space-xs);
+        gap: 0.25rem;
       }
 
       .presentation-year,
@@ -558,7 +558,7 @@
       </div>
       <div class="contact-info">
         <span>📍 Office: MATH 707</span>
-        <span>📧 <a href="mailto:ding158@purdue.edu">ding158@purdue.edu</a></span>
+        <span>📧 <a href="/cdn-cgi/l/email-protection#7014191e17414548300005021405155e151405"><span class="__cf_email__" data-cfemail="583c31363f696d6018282d2a3c2d3d763d3c2d">[email&#160;protected]</span></a></span>
       </div>
     </header>
 
@@ -614,7 +614,7 @@
         My research bridges numerical linear algebra and machine learning by (i) exploiting matrix structure arising in neural network training and (ii) developing randomized numerical linear algebra methods for data compression. The goal is to design fast, stable optimizers and accelerate training from a numerical linear algebra perspective.
       </p>
 
-      <p style="margin-bottom: var(--space-xl);">
+      <p style="margin-bottom: var(--space-md);">
         <a href="Ding_CV.pdf" target="_blank" class="cv-link">Download CV (PDF)</a>
       </p>
 
@@ -802,7 +802,7 @@
     </footer>
   </div>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Smooth scrolling for nav links
     document.querySelectorAll(".nav-link").forEach(link => {
       link.addEventListener("click", function (e) {
