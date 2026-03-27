@@ -1,842 +1,1235 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Tong Ding</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
+
     /* --- RESET & VARIABLES --- */
+
     * {
+
       margin: 0;
+
       padding: 0;
+
       box-sizing: border-box;
+
     }
+
+
 
     :root {
-      /* Professional Academic Palette */
+
       --primary: #1a365d;
+
       --primary-light: #2d4a7c;
+
       --accent: #2563eb;
+
       --text-dark: #1a202c;
+
       --text-medium: #4a5568;
+
       --text-light: #718096;
+
       --border: #e2e8f0;
+
       --bg-subtle: #f7fafc;
+
       --white: #ffffff;
 
-      /* Typography */
       --font-serif: 'Crimson Pro', Georgia, serif;
+
       --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-      /* Spacing */
       --space-xs: 0.5rem;
+
       --space-sm: 1rem;
+
       --space-md: 1.5rem;
+
       --space-lg: 2rem;
+
       --space-xl: 3rem;
+
       --space-2xl: 4rem;
+
     }
+
+
 
     body {
+
       font-family: var(--font-sans);
+
       line-height: 1.7;
+
       color: var(--text-dark);
+
       background: #fefefe;
+
     }
 
-    /* --- CONTAINER --- */
+
+
     .container {
+
       max-width: 900px;
+
       margin: 0 auto;
+
       padding: var(--space-lg) var(--space-md);
+
     }
 
-    /* --- HEADER --- */
+
+
+    /* --- HEADER (photo left, info right) --- */
+
     header {
-      text-align: center;
+
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: var(--space-lg);
+
       padding: var(--space-lg) 0 var(--space-md);
+
       border-bottom: 2px solid var(--border);
+
       margin-bottom: var(--space-lg);
+
     }
+
+
 
     .profile-photo {
-      width: 120px;
-      height: 120px;
+
+      width: 140px;
+
+      height: 140px;
+
       border-radius: 50%;
+
       object-fit: cover;
+
       border: 3px solid var(--border);
-      margin-bottom: var(--space-md);
+
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+      flex-shrink: 0;
+
     }
+
+
+
+    .header-info {
+
+      flex: 1;
+
+    }
+
+
 
     h1 {
+
       font-family: var(--font-serif);
+
       font-size: 2.25rem;
+
       font-weight: 700;
+
       color: var(--primary);
+
       margin-bottom: var(--space-xs);
+
       letter-spacing: -0.02em;
+
     }
+
+
 
     .title-info {
+
       font-size: 1rem;
+
       color: var(--text-medium);
-      margin-bottom: var(--space-sm);
+
       line-height: 1.6;
+
     }
 
-    .advisor-line {
-      display: block;
-      margin-top: 0.25rem;
-    }
+
 
     .contact-info {
-      display: flex;
-      gap: var(--space-md);
-      justify-content: center;
-      align-items: center;
-      margin-top: var(--space-sm);
+
       font-size: 0.9rem;
+
       color: var(--text-medium);
+
+      margin-top: 0.4rem;
+
     }
 
-    .contact-info span {
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
-    }
+
 
     .contact-info a {
+
       color: var(--accent);
+
       text-decoration: none;
+
       font-weight: 500;
+
       transition: color 0.2s;
+
     }
+
+
 
     .contact-info a:hover {
+
       color: var(--primary-light);
+
       text-decoration: underline;
+
     }
 
-    /* --- NAVIGATION --- */
-    nav {
-      margin: var(--space-md) 0;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0;
-    }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 0;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      display: block;
-      padding: 0.6rem var(--space-md);
-      text-decoration: none;
-      color: var(--text-medium);
-      font-weight: 500;
-      font-size: 0.9rem;
-      border-bottom: 3px solid transparent;
-      transition: all 0.2s;
-      letter-spacing: 0.02em;
-    }
-
-    nav a:hover {
-      color: var(--primary);
-      border-bottom-color: var(--accent);
-    }
-
-    nav a.active {
-      color: var(--primary);
-      border-bottom-color: var(--accent);
-    }
 
     /* --- SECTIONS --- */
+
     section {
+
       scroll-margin-top: 2rem;
+
       margin-bottom: var(--space-xl);
+
       padding-top: var(--space-sm);
+
     }
+
+
 
     h2 {
+
       font-family: var(--font-serif);
+
       font-size: 1.75rem;
+
       font-weight: 700;
+
       color: var(--primary);
+
       margin-bottom: var(--space-md);
+
       padding-bottom: 0.4rem;
+
       border-bottom: 2px solid var(--primary);
+
       letter-spacing: -0.01em;
+
     }
+
+
 
     h3 {
+
       font-family: var(--font-serif);
+
       font-size: 1.25rem;
+
       font-weight: 600;
+
       color: var(--text-dark);
+
       margin: var(--space-lg) 0 var(--space-sm);
+
     }
+
+
 
     section h3:first-of-type {
+
       margin-top: var(--space-sm);
+
     }
+
+
 
     .bio {
+
       font-size: 1rem;
+
       line-height: 1.7;
+
       color: var(--text-medium);
+
       margin-bottom: var(--space-md);
+
     }
+
+
 
     /* --- RESEARCH INTERESTS --- */
+
     .interests-list {
+
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 0.5rem;
+
       margin: var(--space-sm) 0 var(--space-lg);
+
     }
+
+
 
     .interest-tag {
+
       background: var(--bg-subtle);
+
       padding: 0.4rem 1rem;
+
       border-radius: 5px;
+
       font-size: 0.85rem;
+
       color: var(--text-dark);
+
       font-weight: 500;
+
       border: 1px solid var(--border);
+
       transition: all 0.2s;
+
     }
+
+
 
     .interest-tag:hover {
+
       border-color: var(--accent);
+
       background: #eff6ff;
+
       transform: translateY(-1px);
+
     }
 
-    /* --- UPDATES TABLE --- */
-    .news-section {
-      background: var(--bg-subtle);
-      padding: var(--space-md);
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      margin: var(--space-md) 0;
-    }
 
-    .news-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
 
-    .news-table th {
-      text-align: left;
-      padding: 0.25rem 0 0.5rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      text-transform: uppercase;
-      font-size: 0.7rem;
-      letter-spacing: 0.05em;
-      border-bottom: 2px solid var(--border);
-    }
+    /* --- EDUCATION --- */
 
-    .news-table td {
-      padding: 0.6rem 0;
+    .education-item {
+
+      padding: 0.5rem 0;
+
       border-bottom: 1px solid var(--border);
-      vertical-align: top;
+
     }
 
-    .news-table tbody tr:last-child td {
+    .education-item:last-child {
+
       border-bottom: none;
+
     }
 
-    .date-cell {
-      width: 100px;
+    .education-degree {
+
+      font-size: 0.95rem;
+
       font-weight: 600;
-      color: var(--primary);
-      font-size: 0.85rem;
+
+      color: var(--text-dark);
+
+      margin-bottom: 0.15rem;
+
     }
 
-    .update-cell {
+    .education-detail {
+
+      font-size: 0.85rem;
+
       color: var(--text-medium);
-      font-size: 0.9rem;
+
       line-height: 1.5;
+
     }
+
+
 
     /* --- RESEARCH ITEMS --- */
+
     .research-item {
+
       padding: 0.6rem 0;
+
       border-bottom: 1px solid var(--border);
+
     }
 
     .research-item:last-child {
+
       border-bottom: none;
+
     }
 
     .research-title {
+
       font-size: 0.95rem;
+
       font-weight: 600;
+
       color: var(--text-dark);
+
       margin-bottom: 0.25rem;
+
       line-height: 1.4;
+
     }
 
     .research-meta {
+
       font-size: 0.85rem;
+
       color: var(--text-medium);
+
       margin-bottom: 0.2rem;
+
       line-height: 1.5;
+
     }
 
     .research-meta strong {
+
       color: var(--text-dark);
+
     }
 
     .research-description {
+
       font-size: 0.85rem;
+
       color: var(--text-light);
+
       margin-top: 0.2rem;
+
     }
 
     .research-description a {
+
       color: var(--accent);
+
       text-decoration: none;
+
       font-weight: 500;
+
     }
 
     .research-description a:hover {
+
       text-decoration: underline;
+
     }
 
-   /* --- CV LINK --- */
-  .cv-link-inline {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.3rem;
+
+
+    /* --- CV LINK --- */
+
+    .cv-link-inline {
+
+      color: var(--accent);
+
+      text-decoration: none;
+
+      font-weight: 600;
+
+      font-size: 1.3rem;
+
     }
-  .cv-link-inline:hover {
-    text-decoration: underline;
-}
+
+    .cv-link-inline:hover {
+
+      text-decoration: underline;
+
+    }
+
+
 
     /* --- PRESENTATIONS --- */
+
     .presentation-item {
+
       padding: 0.5rem 0;
+
       display: flex;
+
       gap: var(--space-md);
+
       border-bottom: 1px solid var(--border);
+
     }
 
     .presentation-item:last-child {
-      border-bottom: none;
-    }
 
-    .presentation-year {
-      min-width: 70px;
-      font-weight: 600;
-      color: var(--primary);
-      font-size: 0.85rem;
-      flex-shrink: 0;
+      border-bottom: none;
+
     }
 
     .presentation-content {
+
       flex: 1;
+
     }
 
     .presentation-title {
+
       font-size: 0.9rem;
+
       color: var(--text-dark);
+
       line-height: 1.4;
+
       margin-bottom: 0.15rem;
+
     }
 
     .presentation-type {
+
       color: var(--text-light);
+
       font-size: 0.85rem;
+
       font-style: italic;
+
     }
 
     .presentation-location {
+
       display: block;
+
       color: var(--text-light);
+
       font-size: 0.85rem;
+
       margin-top: 0.15rem;
+
       line-height: 1.4;
+
     }
 
-    .presentation-location.inline {
-      display: inline;
-      margin-left: 0.4rem;
-    }
+
 
     /* --- PROFESSIONAL ACTIVITIES --- */
+
     .activity-item {
+
       padding: 0.6rem 0;
+
       display: flex;
+
       gap: var(--space-md);
+
       border-bottom: 1px solid var(--border);
+
     }
 
     .activity-item:last-child {
+
       border-bottom: none;
+
     }
 
     .activity-year {
+
       min-width: 110px;
+
       font-weight: 600;
+
       color: var(--primary);
+
       font-size: 0.85rem;
+
       flex-shrink: 0;
+
     }
 
     .activity-content {
+
       flex: 1;
+
     }
 
     .activity-title {
+
       font-size: 0.95rem;
+
       font-weight: 600;
+
       color: var(--text-dark);
+
       margin-bottom: 0.3rem;
+
     }
 
     .activity-list {
+
       list-style: none;
+
       margin-top: 0.25rem;
+
     }
 
     .activity-list li {
+
       position: relative;
+
       padding-left: 1rem;
+
       margin-bottom: 0.2rem;
+
       color: var(--text-medium);
+
       line-height: 1.5;
+
       font-size: 0.85rem;
+
     }
 
     .activity-list li::before {
+
       content: "•";
+
       color: var(--accent);
+
       position: absolute;
+
       left: 0;
+
       font-weight: bold;
+
     }
 
+
+
     /* --- TEACHING --- */
+
     .teaching-item {
+
       padding: 0.6rem 0;
+
       border-bottom: 1px solid var(--border);
+
     }
 
     .teaching-item:last-child {
+
       border-bottom: none;
+
     }
 
     .teaching-title {
+
       font-size: 0.95rem;
+
       font-weight: 600;
+
       color: var(--text-dark);
+
       margin-bottom: 0.25rem;
+
     }
 
     .teaching-meta {
+
       font-size: 0.85rem;
+
       color: var(--text-medium);
+
       margin-bottom: 0.25rem;
+
     }
 
     .teaching-description {
+
       font-size: 0.85rem;
+
       color: var(--text-light);
+
       line-height: 1.5;
+
     }
+
+
 
     /* --- FOOTER --- */
+
     footer {
+
       margin-top: var(--space-xl);
+
       padding: var(--space-md) 0;
+
       border-top: 1px solid var(--border);
+
       text-align: center;
+
       color: var(--text-light);
+
       font-size: 0.85rem;
+
     }
 
+
+
     /* --- RESPONSIVE DESIGN --- */
+
     @media (max-width: 768px) {
+
       .container {
+
         padding: var(--space-md) var(--space-sm);
-      }
 
-      h1 {
-        font-size: 1.85rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
       }
 
       header {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
         padding: var(--space-md) 0;
+
+      }
+
+      h1 {
+
+        font-size: 1.85rem;
+
+      }
+
+      h2 {
+
+        font-size: 1.5rem;
+
       }
 
       .profile-photo {
-        width: 100px;
-        height: 100px;
-      }
 
-      .contact-info {
-        flex-direction: column;
-        gap: var(--space-xs);
-      }
+        width: 110px;
 
-      nav ul {
-        flex-direction: column;
-        gap: 0;
-      }
+        height: 110px;
 
-      nav a {
-        padding: 0.5rem;
-        border-bottom: 1px solid var(--border);
       }
 
       .presentation-item,
+
       .activity-item {
+
         flex-direction: column;
+
         gap: 0.25rem;
+
       }
 
-      .presentation-year,
       .activity-year {
+
         min-width: auto;
+
       }
 
       .interests-list {
+
         justify-content: center;
+
       }
+
     }
 
-    /* --- SMOOTH ANIMATIONS --- */
+
+
     @media (prefers-reduced-motion: no-preference) {
+
       * {
+
         scroll-behavior: smooth;
+
       }
 
-      .interest-tag,
-      .cv-link,
-      nav a {
+      .interest-tag {
+
         transition: all 0.2s ease;
+
       }
+
     }
+
   </style>
+
 </head>
+
 <body>
 
+
+
   <div class="container">
+
     <header>
+
       <img src="tong-ding.png" alt="Tong Ding" class="profile-photo" />
-      <h1>Tong Ding</h1>
-      <div class="title-info">
-        PhD Candidate, Department of Mathematics<br />
-        Purdue University<br />
-        <span class="advisor-line">Advisor: Jianlin Xia</span>
+
+      <div class="header-info">
+
+        <h1>Tong Ding</h1>
+
+        <div class="title-info">Postdoctoral Research Associate (starting June 2026)</div>
+
+        <div class="contact-info">
+
+          📧 <a href="mailto:ding158@purdue.edu">ding158@purdue.edu</a>
+
+        </div>
+
       </div>
-      <div class="contact-info">
-        <span>📍 Office: MATH 707</span>
-        <span>📧 <a href="mailto:ding158@purdue.edu">ding158@purdue.edu</a></span>
-      </div>
+
     </header>
 
-    <nav>
-      <ul>
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#research" class="nav-link">Research</a></li>
-        <li><a href="#presentations" class="nav-link">Presentations</a></li>
-        <li><a href="#professional" class="nav-link">Professional</a></li>
-        <li><a href="#teaching" class="nav-link">Teaching</a></li>
-      </ul>
-    </nav>
+
 
     <section id="home">
+
       <h3>Research Interests</h3>
+
       <div class="interests-list">
+
         <span class="interest-tag">Numerical Linear Algebra</span>
+
         <span class="interest-tag">Randomized Algorithms</span>
+
         <span class="interest-tag">Machine Learning</span>
+
         <span class="interest-tag">Scientific Computing</span>
+
       </div>
-      
+
+      <!--
+
       <p class="bio" style="margin-top: var(--space-md);">
+
         My research bridges numerical linear algebra and machine learning by (i) exploiting matrix structure arising in neural network training and (ii) developing randomized numerical linear algebra methods for data compression. The goal is to design fast, stable optimizers and accelerate training from a numerical linear algebra perspective.
+
       </p>
 
-      <h3>Recent Updates</h3>
-      <div class="news-section">
-        <table class="news-table">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Updates</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="date-cell">Feb 2026</td>
-              <td class="update-cell">Attended the ICERM Workshop on Randomized Numerical Linear Algebra (RNLA).</td>
-            </tr>
-            <tr>
-              <td class="date-cell">Dec 2025</td>
-              <td class="update-cell">Attended the CBMS Workshop at the University of Houston.</td>
-            </tr>
-            <tr>
-              <td class="date-cell">Oct 2025</td>
-              <td class="update-cell">Gave minisymposium talk at SIAM Central States Section Annual Meeting.</td>
-            </tr>
-          </tbody>
-        </table>
+      -->
+
+
+
+      <h3>Education</h3>
+
+      <div class="education-item">
+
+        <div class="education-degree">Ph.D. in Mathematics, Purdue University, Augest 2019 – May 2026</div>
+
+        <div class="education-detail">Advisor: Jianlin Xia</div>
+
+        <div class="education-detail">Thesis: <em>Matrix Computations for Training Shallow Neural Networks</em></div>
+
       </div>
+
+      <div class="education-item">
+
+        <div class="education-degree">B.S. in Mathematics, Purdue University, Augest 2015 – May 2019</div>
+
+      </div>
+
     </section>
+
+
 
     <section id="research">
+
       <h2>Publications <a href="Ding_CV.pdf" target="_blank" class="cv-link-inline">[CV]</a></h2>
 
-      <div class="research-item">
-        <div class="research-title">Matrix analysis for shallow ReLU neural network least-squares approximations</div>
-        <div class="research-meta">
-          Zhiqiang Cai, <strong>Tong Ding</strong>, Min Liu, and Jianlin Xia<br />
-          <span style="font-style: italic;">Status: In preparation</span>
-        </div>
-      </div>
+
 
       <div class="research-item">
-        <div class="research-title">A Structure-Guided Gauss-Newton Method for Shallow ReLU Neural Network</div>
+
+        <div class="research-title">Matrix analysis for shallow ReLU neural network least-squares approximations</div>
+
         <div class="research-meta">
-          Zhiqiang Cai, <strong>Tong Ding</strong>, Min Liu, Xinyu Liu, and Jianlin Xia<br />
-          <span style="font-style: italic;">Status: Submitted</span>
+
+          Zhiqiang Cai, <strong>Tong Ding</strong>, Min Liu, and Jianlin Xia<br />
+
+          <span style="font-style: italic;">Status: In preparation</span>
+
         </div>
-        <div class="research-description">
-          <a href="https://arxiv.org/abs/2404.05064" target="_blank">View on arXiv →</a>
-        </div>
+
       </div>
+
+
+
+      <div class="research-item">
+
+        <div class="research-title">A Structure-Guided Gauss-Newton Method for Shallow ReLU Neural Network</div>
+
+        <div class="research-meta">
+
+          Zhiqiang Cai, <strong>Tong Ding</strong>, Min Liu, Xinyu Liu, and Jianlin Xia<br />
+
+          <span style="font-style: italic;">Status: Submitted</span>
+
+        </div>
+
+        <div class="research-description">
+
+          <a href="https://arxiv.org/abs/2404.05064" target="_blank">View on arXiv →</a>
+
+        </div>
+
+      </div>
+
     </section>
 
+
+
     <section id="presentations">
+
       <h2>Presentations</h2>
 
-<h3>Talks</h3>
+
+
+      <h3>Talks</h3>
+
       
+
       <div class="presentation-item">
+
         <div class="presentation-content">
+
           <div class="presentation-title">
+
             Why Neural Network Optimization Matrices Are Ill-Conditioned and Why That's Okay
+
             <span class="presentation-type">(Lightning talk)</span>
+
           </div>
+
           <div class="presentation-meta">
+
             <span class="presentation-location">Workshop on Network Algorithms, Analysis, and Learning for Science, Berkeley, CA, November 2025</span>
+
           </div>
+
         </div>
+
       </div>
 
+
+
       <div class="presentation-item">
+
         <div class="presentation-content">
+
           <div class="presentation-title">
+
             Matrix Analysis and Fast Solvers in Neural Networks
+
             <span class="presentation-type">(Minisymposium talk)</span>
+
           </div>
+
           <div class="presentation-meta">
+
             <span class="presentation-location">SIAM Central States Section Annual Meeting, Fayetteville, AR, October 2025</span>
+
           </div>
+
         </div>
+
       </div>
 
+
+
       <div class="presentation-item">
+
         <div class="presentation-content">
+
           <div class="presentation-title">
+
             Matrix Analysis for Shallow ReLU Neural Network Least-Squares Approximations
+
             <span class="presentation-type">(Session talk)</span>
+
           </div>
+
           <div class="presentation-meta">
+
             <span class="presentation-location">22nd Copper Mountain Conference on Multigrid Methods, Copper Mountain, CO, April 2025</span>
+
           </div>
+
         </div>
+
       </div>
 
+
+
       <div class="presentation-item">
+
         <div class="presentation-content">
+
           <div class="presentation-title">
+
             A Structure-Guided Gauss-Newton Method for Shallow ReLU Neural Networks
+
             <span class="presentation-type">(Minisymposium talk)</span>
+
           </div>
+
           <div class="presentation-meta">
+
             <span class="presentation-location">International Conference on Preconditioning, Atlanta, GA, June 2024</span>
+
           </div>
+
         </div>
+
       </div>
+
+
 
       <h3>Posters</h3>
 
+
+
       <div class="presentation-item">
+
         <div class="presentation-content">
+
           <div class="presentation-title">
+
             ICERM Workshop on Randomized Numerical Linear Algebra (RNLA)
+
           </div>
+
           <div class="presentation-meta">
+
             <span class="presentation-location">Providence, RI, February 2026</span>
+
           </div>
+
         </div>
+
       </div>
 
+
+
       <div class="presentation-item">
+
         <div class="presentation-content">
+
           <div class="presentation-title">
+
             CBMS Conference on Research at the Interface of Applied Mathematics and Machine Learning
+
           </div>
+
           <div class="presentation-meta">
+
             <span class="presentation-location">Houston, TX, December 2025</span>
+
           </div>
+
         </div>
+
       </div>
 
+
+
       <div class="presentation-item">
+
         <div class="presentation-content">
+
           <div class="presentation-title">
+
             NSF Computational Mathematics PI Meeting
+
           </div>
+
           <div class="presentation-meta">
+
             <span class="presentation-location">Salt Lake City, UT, July 2025</span>
+
           </div>
+
         </div>
+
       </div>
 
+
+
       <div class="presentation-item">
+
         <div class="presentation-content">
+
           <div class="presentation-title">
+
             NSF Computational Mathematics PI Meeting
+
           </div>
+
           <div class="presentation-meta">
+
             <span class="presentation-location">Seattle, WA, June 2024</span>
+
           </div>
+
         </div>
+
       </div>
 
+
+
       <div class="presentation-item">
+
         <div class="presentation-content">
+
           <div class="presentation-title">
+
             Purdue Undergraduate Research Exhibition
+
           </div>
+
           <div class="presentation-meta">
+
             <span class="presentation-location">West Lafayette, IN, May 2019</span>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
+
 
     <section id="professional">
+
       <h2>Professional Activities</h2>
 
+
+
       <div class="activity-item">
+
         <div class="activity-year">January 2024 – May 2026</div>
+
         <div class="activity-content">
+
           <div class="activity-title">President, SIAM Student Chapter, Purdue University</div>
+
           <ul class="activity-list">
+
             <li>Organized annual student conferences (2024, 2025, and 2026)</li>
+
           </ul>
+
           <div class="research-description" style="margin-top: var(--space-xs);">
+
             <a href="https://siampurdue.github.io/" target="_blank">SIAM Purdue Website →</a>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
+
 
     <section id="teaching">
+
       <h2>Teaching</h2>
-      <p class="bio">I am passionate about teaching mathematics and helping students develop deep understanding through coding and hands-on problem solving.</p>
 
-      <h3>Teaching Experience</h3>
+
 
       <div class="teaching-item">
+
         <div class="teaching-title">MA 303: Differential Equations for Engineering</div>
+
         <div class="teaching-meta">Guest Lecturer | Spring 2025 | Purdue University</div>
+
         <div class="teaching-description">
+
           Delivered lectures for undergraduate students, prepared course materials, and facilitated class discussions on differential equations topics.
+
         </div>
+
       </div>
 
+
+
       <div class="teaching-item">
+
         <div class="teaching-title">MA 16600: Calculus II</div>
+
         <div class="teaching-meta">Teaching Assistant | Spring 2020 | Purdue University</div>
+
         <div class="teaching-description">
+
           Led recitation sessions and held office hours to support students in mastering calculus concepts.
+
         </div>
+
       </div>
 
+
+
       <div class="teaching-item">
+
         <div class="teaching-title">Graduate Grader</div>
+
         <div class="teaching-description">
+
           Graded coursework for MA 52700 (Advanced Mathematics for Engineers), MA 35100 (Linear Algebra), and MA 45000 (Abstract Algebra).
+
         </div>
+
       </div>
+
     </section>
 
+
+
     <footer>
+
       <p>© 2026 Tong Ding. Last updated February 2026.</p>
+
     </footer>
+
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Smooth scrolling for nav links
-    document.querySelectorAll(".nav-link").forEach(link => {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        document.querySelectorAll(".nav-link").forEach(l => l.classList.remove("active"));
-        this.classList.add("active");
-
-        const targetId = this.getAttribute("href").substring(1);
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      });
-    });
-
-    // Scroll Spy: Update nav links while scrolling
-    const sections = Array.from(document.querySelectorAll("section"));
-    const navLinks = Array.from(document.querySelectorAll(".nav-link"));
-
-    function setActiveById(id) {
-      navLinks.forEach(link => {
-        link.classList.toggle("active", link.getAttribute("href") === "#" + id);
-      });
-    }
-
-    function updateActiveNav() {
-      const scrollPosition = window.scrollY + 200;
-
-      let currentSectionId = sections[0]?.id || "home";
-      for (const section of sections) {
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-        if (scrollPosition >= top && scrollPosition < bottom) {
-          currentSectionId = section.id;
-          break;
-        }
-      }
-
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
-        currentSectionId = sections[sections.length - 1]?.id || currentSectionId;
-      }
-
-      setActiveById(currentSectionId);
-    }
-
-    window.addEventListener("scroll", updateActiveNav, { passive: true });
-    window.addEventListener("load", updateActiveNav);
-  </script>
 </body>
+
 </html>
