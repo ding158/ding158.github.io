@@ -798,11 +798,11 @@
 
         <h1>Tong Ding</h1>
 
-        <div class="title-info">Postdoctoral Research Associate at UIUC, beginning June 2026 </div>
+        <div class="title-info">Postdoctoral Research Associate, UIUC, June 2026 – present</div>
 
         <div class="contact-info">
 
-          📧 ding158 @ purdue.edu</a>
+          📧 <span id="email" aria-label="email address"></span><noscript>tongding [at] illinois [dot] edu</noscript> &nbsp;|&nbsp; 🏢 Office 4217
 
         </div>
 
@@ -1197,11 +1197,33 @@
 
     <footer>
 
-      <p>© 2026 Tong Ding. Last updated May 2026.</p>
+      <p>© 2026 Tong Ding. Last updated June 2026.</p>
 
     </footer>
 
   </div>
+
+  <script>
+
+    // Assemble the email from parts so it never appears as a complete
+    // address in the page source. Rendered as plain text (no mailto link),
+    // so clicking it does not open a mail client.
+
+    (function () {
+
+      var parts = ['tongding', 'illinois', 'edu'];
+
+      var el = document.getElementById('email');
+
+      if (el) {
+
+        el.textContent = parts[0] + '@' + parts[1] + '.' + parts[2];
+
+      }
+
+    })();
+
+  </script>
 
 </body>
 
